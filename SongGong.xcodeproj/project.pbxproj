@@ -48,6 +48,7 @@
 		A7EA405E13D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
 		A7EA406013D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
 		A7EA406213D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
+		BCEDBD8F13D2343400BEA8FA /* SGCarouselProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCarouselProtocols.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +109,7 @@
 				A7EA405D13D16578008D9551 /* FirstViewController_iPhone.xib */,
 				A7EA405F13D16578008D9551 /* SecondViewController_iPad.xib */,
 				A7EA406113D16578008D9551 /* SecondViewController_iPhone.xib */,
+				BCEDBD8F13D2343400BEA8FA /* SGCarouselProtocols.h */,
 				A7E0002D13D15A3D0048B9EC /* Supporting Files */,
 			);
 			path = SongGong;
