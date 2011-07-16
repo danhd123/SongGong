@@ -7,7 +7,6 @@
 //
 
 #import "SGCarouselViewController.h"
-#import "SGBlindGestureViewController.h"
 #import "SGCarouselProtocols.h"
 #import "SGGestureController.h"
 

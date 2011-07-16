@@ -7,7 +7,6 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SGBlindGestureViewController.h" 
 #import "SGGestureController.h"
 #import "SGCarouselProtocols.h"
 
