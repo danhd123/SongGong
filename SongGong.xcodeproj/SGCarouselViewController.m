@@ -9,13 +9,16 @@
 #import "SGCarouselViewController.h"
 #import "SGBlindGestureViewController.h"
 #import "SGCarouselProtocols.h"
+#import "SGGestureController.h"
 
 @implementation SGCarouselViewController
+@synthesize gestureController;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        NSLog(@"%@ %@", [self class], NSStringFromSelector(_cmd));
         // Custom initialization
     }
     return self;
@@ -31,6 +34,7 @@
 
 - (void)dealloc
 {
+    [self.gestureController release];
     [super dealloc];
 }
 
@@ -39,6 +43,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    NSLog(@"%@ %@", [self class], NSStringFromSelector(_cmd));
+    NSLog(@"%@", [self.view window]);
+    
+    self.gestureController = [[SGGestureController alloc] init];
+    self.gestureController.delegate = self;
+    
     // Do any additional setup after loading the view from its nib.
 }
 

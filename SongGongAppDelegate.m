@@ -14,6 +14,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
+#import "SGCarouselViewController.h"
 
 
 @implementation SongGongAppDelegate
@@ -25,7 +26,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-    UIViewController *viewController1, *viewController2;
+//    UIViewController *viewController1, *viewController2;
 //    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 //        viewController1 = [[FirstViewController alloc] initWithNibName:@"FirstViewController_iPhone" bundle:nil];
 //        viewController2 = [[SecondViewController alloc] initWithNibName:@"SecondViewController_iPhone" bundle:nil];
@@ -41,6 +42,9 @@
     
 //    self.window.rootViewController = self.blindGestureView
     
+    mCarouselViewController = [[SGCarouselViewController alloc] initWithNibName:@"SGCarouselViewController" bundle:nil]; 
+        
+    self.window.rootViewController = mCarouselViewController;
     
     [self.window makeKeyAndVisible];
     AVAudioSession *audioSession = [AVAudioSession sharedInstance];

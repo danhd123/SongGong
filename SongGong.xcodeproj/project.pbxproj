@@ -8,10 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		A72BFD0113D239EC00DF1B35 /* SGBlindGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = A72BFD0013D239EC00DF1B35 /* SGBlindGestureView.m */; };
-		A72BFD0A13D23BD000DF1B35 /* SGBlindGestureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A72BFD0813D23BD000DF1B35 /* SGBlindGestureViewController.m */; };
-		A72BFD0B13D23BD000DF1B35 /* SGBlindGestureViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A72BFD0913D23BD000DF1B35 /* SGBlindGestureViewController.xib */; };
 		A76DD83213D23EE200DAD5DC /* SGCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A76DD83013D23EE200DAD5DC /* SGCarouselViewController.m */; };
 		A76DD83313D23EE200DAD5DC /* SGCarouselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76DD83113D23EE200DAD5DC /* SGCarouselViewController.xib */; };
+		A7C4192813D24F8F00C12455 /* SGGestureController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C4192713D24F8F00C12455 /* SGGestureController.m */; };
 		A7E0002713D15A3D0048B9EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002613D15A3D0048B9EC /* UIKit.framework */; };
 		A7E0002913D15A3D0048B9EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002813D15A3D0048B9EC /* Foundation.framework */; };
 		A7E0002B13D15A3D0048B9EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002A13D15A3D0048B9EC /* CoreGraphics.framework */; };
@@ -36,12 +35,11 @@
 /* Begin PBXFileReference section */
 		A72BFCFF13D239EC00DF1B35 /* SGBlindGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGBlindGestureView.h; path = SongGong.xcodeproj/SGBlindGestureView.h; sourceTree = SOURCE_ROOT; };
 		A72BFD0013D239EC00DF1B35 /* SGBlindGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGBlindGestureView.m; path = SongGong.xcodeproj/SGBlindGestureView.m; sourceTree = SOURCE_ROOT; };
-		A72BFD0713D23BD000DF1B35 /* SGBlindGestureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGBlindGestureViewController.h; path = SongGong.xcodeproj/SGBlindGestureViewController.h; sourceTree = SOURCE_ROOT; };
-		A72BFD0813D23BD000DF1B35 /* SGBlindGestureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGBlindGestureViewController.m; path = SongGong.xcodeproj/SGBlindGestureViewController.m; sourceTree = SOURCE_ROOT; };
-		A72BFD0913D23BD000DF1B35 /* SGBlindGestureViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SGBlindGestureViewController.xib; path = SongGong.xcodeproj/SGBlindGestureViewController.xib; sourceTree = SOURCE_ROOT; };
 		A76DD82F13D23EE200DAD5DC /* SGCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGCarouselViewController.h; path = SongGong.xcodeproj/SGCarouselViewController.h; sourceTree = SOURCE_ROOT; };
 		A76DD83013D23EE200DAD5DC /* SGCarouselViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGCarouselViewController.m; path = SongGong.xcodeproj/SGCarouselViewController.m; sourceTree = SOURCE_ROOT; };
 		A76DD83113D23EE200DAD5DC /* SGCarouselViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SGCarouselViewController.xib; path = SongGong.xcodeproj/SGCarouselViewController.xib; sourceTree = SOURCE_ROOT; };
+		A7C4192613D24F8F00C12455 /* SGGestureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGGestureController.h; path = SongGong.xcodeproj/SGGestureController.h; sourceTree = SOURCE_ROOT; };
+		A7C4192713D24F8F00C12455 /* SGGestureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGGestureController.m; path = SongGong.xcodeproj/SGGestureController.m; sourceTree = SOURCE_ROOT; };
 		A7E0002213D15A3D0048B9EC /* SongGong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongGong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E0002613D15A3D0048B9EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A7E0002813D15A3D0048B9EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,8 +121,8 @@
 				A76DD82F13D23EE200DAD5DC /* SGCarouselViewController.h */,
 				A76DD83013D23EE200DAD5DC /* SGCarouselViewController.m */,
 				A76DD83113D23EE200DAD5DC /* SGCarouselViewController.xib */,
-				A72BFD0713D23BD000DF1B35 /* SGBlindGestureViewController.h */,
-				A72BFD0813D23BD000DF1B35 /* SGBlindGestureViewController.m */,
+				A7C4192613D24F8F00C12455 /* SGGestureController.h */,
+				A7C4192713D24F8F00C12455 /* SGGestureController.m */,
 				A7EA404313D164FC008D9551 /* first.png */,
 				A7EA404413D164FC008D9551 /* first@2x.png */,
 				A7EA404513D164FC008D9551 /* FirstViewController.h */,
@@ -143,7 +141,6 @@
 				A7E0002D13D15A3D0048B9EC /* Supporting Files */,
 				A72BFCFF13D239EC00DF1B35 /* SGBlindGestureView.h */,
 				A72BFD0013D239EC00DF1B35 /* SGBlindGestureView.m */,
-				A72BFD0913D23BD000DF1B35 /* SGBlindGestureViewController.xib */,
 			);
 			path = SongGong;
 			sourceTree = "<group>";
@@ -219,7 +216,6 @@
 				A7EA406413D16578008D9551 /* FirstViewController_iPhone.xib in Resources */,
 				A7EA406513D16578008D9551 /* SecondViewController_iPad.xib in Resources */,
 				A7EA406613D16578008D9551 /* SecondViewController_iPhone.xib in Resources */,
-				A72BFD0B13D23BD000DF1B35 /* SGBlindGestureViewController.xib in Resources */,
 				A76DD83313D23EE200DAD5DC /* SGCarouselViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -236,8 +232,8 @@
 				A7EA405513D164FC008D9551 /* SongGongAppDelegate.m in Sources */,
 				A7EA405713D16550008D9551 /* main.m in Sources */,
 				A72BFD0113D239EC00DF1B35 /* SGBlindGestureView.m in Sources */,
-				A72BFD0A13D23BD000DF1B35 /* SGBlindGestureViewController.m in Sources */,
 				A76DD83213D23EE200DAD5DC /* SGCarouselViewController.m in Sources */,
+				A7C4192813D24F8F00C12455 /* SGGestureController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

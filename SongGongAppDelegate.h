@@ -7,11 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SGCarouselViewController;
 
 @interface SongGongAppDelegate : UIResponder <UIApplicationDelegate, UITabBarControllerDelegate>
-
+{
+    IBOutlet SGCarouselViewController *mCarouselViewController;
+}
 @property (nonatomic, retain) UIWindow *window;
 
 @property (nonatomic, retain) UITabBarController *tabBarController;
+
 
 @end
