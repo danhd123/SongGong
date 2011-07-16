@@ -23,6 +23,8 @@
 		A7EA406413D16578008D9551 /* FirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405D13D16578008D9551 /* FirstViewController_iPhone.xib */; };
 		A7EA406513D16578008D9551 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405F13D16578008D9551 /* SecondViewController_iPad.xib */; };
 		A7EA406613D16578008D9551 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA406113D16578008D9551 /* SecondViewController_iPhone.xib */; };
+		BCEDBD9313D23BCF00BEA8FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */; };
+		BCEDBD9413D23BCF00BEA8FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9213D23BCF00BEA8FA /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		A7EA406013D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
 		A7EA406213D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
 		BCEDBD8F13D2343400BEA8FA /* SGCarouselProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCarouselProtocols.h; sourceTree = SOURCE_ROOT; };
+		BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BCEDBD9213D23BCF00BEA8FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BCEDBD9313D23BCF00BEA8FA /* AudioToolbox.framework in Frameworks */,
+				BCEDBD9413D23BCF00BEA8FA /* AVFoundation.framework in Frameworks */,
 				A7E0002713D15A3D0048B9EC /* UIKit.framework in Frameworks */,
 				A7E0002913D15A3D0048B9EC /* Foundation.framework in Frameworks */,
 				A7E0002B13D15A3D0048B9EC /* CoreGraphics.framework in Frameworks */,
@@ -85,6 +91,8 @@
 		A7E0002513D15A3D0048B9EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */,
+				BCEDBD9213D23BCF00BEA8FA /* AVFoundation.framework */,
 				A7E0002613D15A3D0048B9EC /* UIKit.framework */,
 				A7E0002813D15A3D0048B9EC /* Foundation.framework */,
 				A7E0002A13D15A3D0048B9EC /* CoreGraphics.framework */,

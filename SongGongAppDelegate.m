@@ -12,6 +12,10 @@
 
 #import "SecondViewController.h"
 
+#import <AVFoundation/AVFoundation.h>
+#import <AudioToolbox/AudioToolbox.h>
+
+
 @implementation SongGongAppDelegate
 
 @synthesize window = _window;
@@ -33,6 +37,16 @@
     self.tabBarController.viewControllers = [NSArray arrayWithObjects:viewController1, viewController2, nil];
     self.window.rootViewController = self.tabBarController;
     [self.window makeKeyAndVisible];
+    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+    
+    NSError *setCategoryError = nil;
+    if (![audioSession setCategory:AVAudioSessionCategoryPlayback error:&setCategoryError])
+    { NSLog(@"%@", setCategoryError); }
+    
+    NSError *activationError = nil;
+    
+    if (![audioSession setActive:YES error:&activationError]) { NSLog(@"%@", activationError); }
+
     return YES;
 }
 
