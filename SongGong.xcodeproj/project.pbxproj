@@ -1,0 +1,344 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A7E0002713D15A3D0048B9EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002613D15A3D0048B9EC /* UIKit.framework */; };
+		A7E0002913D15A3D0048B9EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002813D15A3D0048B9EC /* Foundation.framework */; };
+		A7E0002B13D15A3D0048B9EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002A13D15A3D0048B9EC /* CoreGraphics.framework */; };
+		A7E0003113D15A3D0048B9EC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7E0002F13D15A3D0048B9EC /* InfoPlist.strings */; };
+		A7E0003313D15A3D0048B9EC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E0003213D15A3D0048B9EC /* main.m */; };
+		A7E0003713D15A3D0048B9EC /* SongGongAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E0003613D15A3D0048B9EC /* SongGongAppDelegate.m */; };
+		A7E0003A13D15A3D0048B9EC /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E0003913D15A3D0048B9EC /* FirstViewController.m */; };
+		A7E0003C13D15A3D0048B9EC /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E0003B13D15A3D0048B9EC /* first.png */; };
+		A7E0003E13D15A3D0048B9EC /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E0003D13D15A3D0048B9EC /* first@2x.png */; };
+		A7E0004113D15A3D0048B9EC /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7E0004013D15A3D0048B9EC /* SecondViewController.m */; };
+		A7E0004313D15A3D0048B9EC /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E0004213D15A3D0048B9EC /* second.png */; };
+		A7E0004513D15A3D0048B9EC /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7E0004413D15A3D0048B9EC /* second@2x.png */; };
+		A7E0004813D15A3D0048B9EC /* FirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E0004613D15A3D0048B9EC /* FirstViewController_iPhone.xib */; };
+		A7E0004B13D15A3D0048B9EC /* FirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E0004913D15A3D0048B9EC /* FirstViewController_iPad.xib */; };
+		A7E0004E13D15A3D0048B9EC /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E0004C13D15A3D0048B9EC /* SecondViewController_iPhone.xib */; };
+		A7E0005113D15A3D0048B9EC /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7E0004F13D15A3D0048B9EC /* SecondViewController_iPad.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A7E0002213D15A3D0048B9EC /* SongGong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongGong.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A7E0002613D15A3D0048B9EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A7E0002813D15A3D0048B9EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A7E0002A13D15A3D0048B9EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A7E0002E13D15A3D0048B9EC /* SongGong-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SongGong-Info.plist"; sourceTree = "<group>"; };
+		A7E0003013D15A3D0048B9EC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A7E0003213D15A3D0048B9EC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A7E0003413D15A3D0048B9EC /* SongGong-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SongGong-Prefix.pch"; sourceTree = "<group>"; };
+		A7E0003513D15A3D0048B9EC /* SongGongAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SongGongAppDelegate.h; sourceTree = "<group>"; };
+		A7E0003613D15A3D0048B9EC /* SongGongAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SongGongAppDelegate.m; sourceTree = "<group>"; };
+		A7E0003813D15A3D0048B9EC /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		A7E0003913D15A3D0048B9EC /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		A7E0003B13D15A3D0048B9EC /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = "<group>"; };
+		A7E0003D13D15A3D0048B9EC /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = "<group>"; };
+		A7E0003F13D15A3D0048B9EC /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		A7E0004013D15A3D0048B9EC /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		A7E0004213D15A3D0048B9EC /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
+		A7E0004413D15A3D0048B9EC /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		A7E0004713D15A3D0048B9EC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPhone.xib; sourceTree = "<group>"; };
+		A7E0004A13D15A3D0048B9EC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPad.xib; sourceTree = "<group>"; };
+		A7E0004D13D15A3D0048B9EC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPhone.xib; sourceTree = "<group>"; };
+		A7E0005013D15A3D0048B9EC /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPad.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A7E0001F13D15A3D0048B9EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7E0002713D15A3D0048B9EC /* UIKit.framework in Frameworks */,
+				A7E0002913D15A3D0048B9EC /* Foundation.framework in Frameworks */,
+				A7E0002B13D15A3D0048B9EC /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A7E0001713D15A3D0048B9EC = {
+			isa = PBXGroup;
+			children = (
+				A7E0002C13D15A3D0048B9EC /* SongGong */,
+				A7E0002513D15A3D0048B9EC /* Frameworks */,
+				A7E0002313D15A3D0048B9EC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A7E0002313D15A3D0048B9EC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A7E0002213D15A3D0048B9EC /* SongGong.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A7E0002513D15A3D0048B9EC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A7E0002613D15A3D0048B9EC /* UIKit.framework */,
+				A7E0002813D15A3D0048B9EC /* Foundation.framework */,
+				A7E0002A13D15A3D0048B9EC /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A7E0002C13D15A3D0048B9EC /* SongGong */ = {
+			isa = PBXGroup;
+			children = (
+				A7E0003513D15A3D0048B9EC /* SongGongAppDelegate.h */,
+				A7E0003613D15A3D0048B9EC /* SongGongAppDelegate.m */,
+				A7E0003813D15A3D0048B9EC /* FirstViewController.h */,
+				A7E0003913D15A3D0048B9EC /* FirstViewController.m */,
+				A7E0003B13D15A3D0048B9EC /* first.png */,
+				A7E0003D13D15A3D0048B9EC /* first@2x.png */,
+				A7E0003F13D15A3D0048B9EC /* SecondViewController.h */,
+				A7E0004013D15A3D0048B9EC /* SecondViewController.m */,
+				A7E0004213D15A3D0048B9EC /* second.png */,
+				A7E0004413D15A3D0048B9EC /* second@2x.png */,
+				A7E0004613D15A3D0048B9EC /* FirstViewController_iPhone.xib */,
+				A7E0004913D15A3D0048B9EC /* FirstViewController_iPad.xib */,
+				A7E0004C13D15A3D0048B9EC /* SecondViewController_iPhone.xib */,
+				A7E0004F13D15A3D0048B9EC /* SecondViewController_iPad.xib */,
+				A7E0002D13D15A3D0048B9EC /* Supporting Files */,
+			);
+			path = SongGong;
+			sourceTree = "<group>";
+		};
+		A7E0002D13D15A3D0048B9EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A7E0002E13D15A3D0048B9EC /* SongGong-Info.plist */,
+				A7E0002F13D15A3D0048B9EC /* InfoPlist.strings */,
+				A7E0003213D15A3D0048B9EC /* main.m */,
+				A7E0003413D15A3D0048B9EC /* SongGong-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7E0002113D15A3D0048B9EC /* SongGong */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A7E0005413D15A3D0048B9EC /* Build configuration list for PBXNativeTarget "SongGong" */;
+			buildPhases = (
+				A7E0001E13D15A3D0048B9EC /* Sources */,
+				A7E0001F13D15A3D0048B9EC /* Frameworks */,
+				A7E0002013D15A3D0048B9EC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SongGong;
+			productName = SongGong;
+			productReference = A7E0002213D15A3D0048B9EC /* SongGong.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A7E0001913D15A3D0048B9EC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "doubleTwist Corporation";
+			};
+			buildConfigurationList = A7E0001C13D15A3D0048B9EC /* Build configuration list for PBXProject "SongGong" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A7E0001713D15A3D0048B9EC;
+			productRefGroup = A7E0002313D15A3D0048B9EC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7E0002113D15A3D0048B9EC /* SongGong */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A7E0002013D15A3D0048B9EC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7E0003113D15A3D0048B9EC /* InfoPlist.strings in Resources */,
+				A7E0003C13D15A3D0048B9EC /* first.png in Resources */,
+				A7E0003E13D15A3D0048B9EC /* first@2x.png in Resources */,
+				A7E0004313D15A3D0048B9EC /* second.png in Resources */,
+				A7E0004513D15A3D0048B9EC /* second@2x.png in Resources */,
+				A7E0004813D15A3D0048B9EC /* FirstViewController_iPhone.xib in Resources */,
+				A7E0004B13D15A3D0048B9EC /* FirstViewController_iPad.xib in Resources */,
+				A7E0004E13D15A3D0048B9EC /* SecondViewController_iPhone.xib in Resources */,
+				A7E0005113D15A3D0048B9EC /* SecondViewController_iPad.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A7E0001E13D15A3D0048B9EC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A7E0003313D15A3D0048B9EC /* main.m in Sources */,
+				A7E0003713D15A3D0048B9EC /* SongGongAppDelegate.m in Sources */,
+				A7E0003A13D15A3D0048B9EC /* FirstViewController.m in Sources */,
+				A7E0004113D15A3D0048B9EC /* SecondViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A7E0002F13D15A3D0048B9EC /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7E0003013D15A3D0048B9EC /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A7E0004613D15A3D0048B9EC /* FirstViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7E0004713D15A3D0048B9EC /* en */,
+			);
+			name = FirstViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		A7E0004913D15A3D0048B9EC /* FirstViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7E0004A13D15A3D0048B9EC /* en */,
+			);
+			name = FirstViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+		A7E0004C13D15A3D0048B9EC /* SecondViewController_iPhone.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7E0004D13D15A3D0048B9EC /* en */,
+			);
+			name = SecondViewController_iPhone.xib;
+			sourceTree = "<group>";
+		};
+		A7E0004F13D15A3D0048B9EC /* SecondViewController_iPad.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A7E0005013D15A3D0048B9EC /* en */,
+			);
+			name = SecondViewController_iPad.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A7E0005213D15A3D0048B9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		A7E0005313D15A3D0048B9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A7E0005513D15A3D0048B9EC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SongGong/SongGong-Prefix.pch";
+				INFOPLIST_FILE = "SongGong/SongGong-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A7E0005613D15A3D0048B9EC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SongGong/SongGong-Prefix.pch";
+				INFOPLIST_FILE = "SongGong/SongGong-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A7E0001C13D15A3D0048B9EC /* Build configuration list for PBXProject "SongGong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7E0005213D15A3D0048B9EC /* Debug */,
+				A7E0005313D15A3D0048B9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A7E0005413D15A3D0048B9EC /* Build configuration list for PBXNativeTarget "SongGong" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A7E0005513D15A3D0048B9EC /* Debug */,
+				A7E0005613D15A3D0048B9EC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = A7E0001913D15A3D0048B9EC /* Project object */;
+}
