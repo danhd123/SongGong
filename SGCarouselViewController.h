@@ -12,11 +12,15 @@
 
 @class SGGestureController;
 @protocol SGGestureControllerDelegate;
+@class iCarousel;
 
 
 @interface SGCarouselViewController : UIViewController <SGGestureControllerDelegate>
 {
     id <SGCarouselItem> currentCarouselSource;
+    NSArray *carouselSources;
+    iCarousel *carousel;
+    BOOL wrap;
 }
 @property (nonatomic, retain) SGGestureController *gestureController;
 

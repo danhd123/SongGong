@@ -23,6 +23,12 @@
 		A7EA405513D164FC008D9551 /* SongGongAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EA404D13D164FC008D9551 /* SongGongAppDelegate.m */; };
 		A7EA405713D16550008D9551 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EA405613D16550008D9551 /* main.m */; };
 		A7EA405A13D1656D008D9551 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405813D1656D008D9551 /* InfoPlist.strings */; };
+		A7EA406313D16578008D9551 /* FirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405B13D16578008D9551 /* FirstViewController_iPad.xib */; };
+		A7EA406413D16578008D9551 /* FirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405D13D16578008D9551 /* FirstViewController_iPhone.xib */; };
+		A7EA406513D16578008D9551 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405F13D16578008D9551 /* SecondViewController_iPad.xib */; };
+		A7EA406613D16578008D9551 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA406113D16578008D9551 /* SecondViewController_iPhone.xib */; };
+		BC6D345613D25995006DA25F /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D345513D25995006DA25F /* iCarousel.m */; };
+		BC6D345913D25A3E006DA25F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6D345813D25A3E006DA25F /* QuartzCore.framework */; };
 		BCEDBD9313D23BCF00BEA8FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */; };
 		BCEDBD9413D23BCF00BEA8FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9213D23BCF00BEA8FA /* AVFoundation.framework */; };
 		BCEDBD9613D2431400BEA8FA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9513D2431400BEA8FA /* MediaPlayer.framework */; };
@@ -55,6 +61,13 @@
 		A7EA404D13D164FC008D9551 /* SongGongAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongGongAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		A7EA405613D16550008D9551 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		A7EA405913D1656D008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		A7EA405C13D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
+		A7EA405E13D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
+		A7EA406013D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
+		A7EA406213D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
+		BC6D345413D25995006DA25F /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = SOURCE_ROOT; };
+		BC6D345513D25995006DA25F /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = SOURCE_ROOT; };
+		BC6D345813D25A3E006DA25F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		BCEDBD8F13D2343400BEA8FA /* SGCarouselProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCarouselProtocols.h; sourceTree = SOURCE_ROOT; };
 		BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BCEDBD9213D23BCF00BEA8FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -66,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BC6D345913D25A3E006DA25F /* QuartzCore.framework in Frameworks */,
 				BCEDBD9613D2431400BEA8FA /* MediaPlayer.framework in Frameworks */,
 				BCEDBD9313D23BCF00BEA8FA /* AudioToolbox.framework in Frameworks */,
 				BCEDBD9413D23BCF00BEA8FA /* AVFoundation.framework in Frameworks */,
@@ -111,6 +125,7 @@
 		A7E0001713D15A3D0048B9EC = {
 			isa = PBXGroup;
 			children = (
+				BC6D345813D25A3E006DA25F /* QuartzCore.framework */,
 				A7E0002C13D15A3D0048B9EC /* SongGong */,
 				A7E0002513D15A3D0048B9EC /* Frameworks */,
 				A7E0002313D15A3D0048B9EC /* Products */,
@@ -144,6 +159,8 @@
 				A7B38D3713D2623C0067C53D /* AudioPlayer */,
 				A7B38D2D13D261590067C53D /* Images */,
 				A7B38D2C13D2614F0067C53D /* Sounds */,
+				BC6D345413D25995006DA25F /* iCarousel.h */,
+				BC6D345513D25995006DA25F /* iCarousel.m */,
 				A7C4192C13D2545C00C12455 /* SGBlindGestureView.h */,
 				A7C4192D13D2545C00C12455 /* SGBlindGestureView.m */,
 				A7C4192E13D2545C00C12455 /* SGCarouselViewController.h */,
@@ -244,6 +261,7 @@
 				A7B38D3C13D2623C0067C53D /* OPAAudioPlayer.m in Sources */,
 				A7B38D3D13D2623C0067C53D /* OPAAudioQueueObject.m in Sources */,
 				A7D636D813D2662500E6F541 /* OPASpookSoundManager.m in Sources */,
+				BC6D345613D25995006DA25F /* iCarousel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
