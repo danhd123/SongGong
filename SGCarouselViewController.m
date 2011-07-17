@@ -67,6 +67,16 @@
     }
     currentCarouselSource = [[carouselSourceViewControllers objectAtIndex:0] source];
     [[carouselSourceViewControllers objectAtIndex:0] carouselDidBringViewToFront];
+    
+    [self performSelector:@selector(playIfIdle:) withObject:nil afterDelay:4.0];
+}
+
+- (void)playIfIdle:(id)obj
+{
+    if ([currentCarouselSource currentItem] == nil)
+    {
+        [currentCarouselSource togglePlay:self];
+    }
 }
 
 - (void)viewDidUnload

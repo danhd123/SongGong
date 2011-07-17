@@ -79,10 +79,10 @@
     [[MPMusicPlayerController applicationMusicPlayer] stop];
     if (self.currentPlaylist == nil)
     {
-        if (self.playlists.count > 0)
-        {
-            self.currentPlaylist = [self.playlists objectAtIndex:0];
-        }
+//        if (self.playlists.count > 0)
+//        {
+//            self.currentPlaylist = [self.playlists objectAtIndex:0];
+//        }
     }
     
     [[MPMusicPlayerController applicationMusicPlayer] play];
@@ -143,7 +143,10 @@
     
     [delegate playlistWillChange:next.title direction:0];
     self.currentPlaylist = next;
+    [self willChangeValueForKey:@"currentItem"];
     [self play:nil];
+    [self didChangeValueForKey:@"currentItem"];
+    [delegate mediaDidChange:self.currentItem];
     
     
 }
@@ -158,7 +161,12 @@
         
     }
     [delegate playlistWillChange:prev.title direction:0];
+
+    [self willChangeValueForKey:@"currentItem"];
+    [self play:nil];
     self.currentPlaylist = prev;
+    [self didChangeValueForKey:@"currentItem"];
+    [delegate mediaDidChange:self.currentItem];
     
     
     return;

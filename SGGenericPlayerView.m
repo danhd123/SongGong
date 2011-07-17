@@ -52,7 +52,7 @@
     [mas setFontFamily:@"Helvetica" size:17.0 bold:YES italic:NO range:NSMakeRange(title.length+2+artist.length, album.length)];
     attributedLabel.attributedText = mas;
     songProgress.progress = playItem.progress;
-    artworkView.image = playItem.thumbnail;
+    artworkView.image = playItem.thumbnail ? playItem.thumbnail : [UIImage imageNamed:@"BlankAudio"];
     [self.view setNeedsDisplay];
 }
 - (void)didReceiveMemoryWarning
