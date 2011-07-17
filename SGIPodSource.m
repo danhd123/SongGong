@@ -27,7 +27,7 @@
 @end
 
 @implementation SGIPodSource
-@synthesize playlists, sourceName, currentPlaylist, currentItem;
+@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor;
 
 - (id)init
 {
@@ -35,7 +35,7 @@
     if (self) {
         // Initialization code here.
         self.sourceName = @"iPod";
-        
+        self.splashColor = [UIColor colorWithRed:26.0/255.0 green:102.0/255.0 blue:77.0/255.0 alpha:1.0];
         [[NSNotificationCenter defaultCenter] addObserver:self
                                selector:@selector(playbackStateChanged:)
                                    name:MPMediaLibraryDidChangeNotification

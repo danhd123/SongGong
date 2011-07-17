@@ -15,6 +15,7 @@
 @synthesize songProgress;
 @synthesize topView;
 @synthesize listeningToLabel;
+@synthesize colorSplashView;
 @synthesize artworkView;
 @synthesize attributedLabel;
 @synthesize playItem;
@@ -52,6 +53,7 @@
     songProgress.progress = playItem.progress;
     artworkView.image = playItem.thumbnail;
     listeningToLabel.text = [NSString stringWithFormat:@"Listening to: %@", self.source.sourceName];
+    colorSplashView.backgroundColor = self.source.splashColor;
 }
 - (void)didReceiveMemoryWarning
 {
@@ -67,7 +69,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [topView setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"gray_bar_gradient"]]];
+    [topView setBackgroundColor:[[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"gray_bar_gradient"]] autorelease]];
 }
 
 - (void)viewDidUnload
@@ -77,6 +79,7 @@
     [self setSongProgress:nil];
     [self setTopView:nil];
     [self setListeningToLabel:nil];
+    [self setColorSplashView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -94,6 +97,7 @@
     [songProgress release];
     [topView release];
     [listeningToLabel release];
+    [colorSplashView release];
     [super dealloc];
 }
 @end
