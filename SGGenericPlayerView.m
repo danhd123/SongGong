@@ -31,8 +31,6 @@
 }
 - (void)setPlayItem:(NSObject<SGMediaItem> *)aPlayItem
 {
-    listeningToLabel.text = [NSString stringWithFormat:@"Listening to: %@", self.source.sourceName];
-    colorSplashView.backgroundColor = self.source.splashColor;
 
     if (playItem != aPlayItem)
     {
@@ -71,6 +69,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     [topView setBackgroundColor:[[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"gray_bar_gradient"]] autorelease]];
+    listeningToLabel.text = self.source.sourceName;
+    colorSplashView.backgroundColor = self.source.splashColor;
+
 }
 
 - (void)viewDidUnload
