@@ -8,8 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "SGCarouselProtocols.h"
+#import "SGIPodSource.h"
 
-@interface SGRdioSource : NSObject <SGCarouselItem>
+@interface SGRdioSource : SGIPodSource
 
 - (void)play:(id)sender;
 - (void)togglePlay:(id)sender;
@@ -21,10 +22,11 @@
 @property (readwrite, retain) NSString *sourceName;
 @property (nonatomic, readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
 @property (readwrite, retain) NSArray *playlists;
+@property (readwrite, assign) id<SGSourceDelegate> delegate;
 @end
 
 
-@interface SGRdioItem : NSObject <SGMediaItem>
+@interface SGRdioItem : SGIPodItem <SGMediaItem>
 - (void)togglePlay:(id)sender;
 @property (readonly) UIImage *thumbnail;
 @property (readwrite, retain) NSString *title;
@@ -33,7 +35,7 @@
 @property (readwrite, retain) NSString *persistentId;
 @end
 
-@interface SGRdioPlaylist : NSObject <SGMediaPlaylist>
+@interface SGRdioPlaylist : SGIPodPlaylist <SGMediaPlaylist>
 - (id <SGMediaItem>)previousItem;
 - (id <SGMediaItem>)nextItem;
 - (void)playItem:(id <SGMediaItem>)item;

@@ -12,6 +12,7 @@
 #import "OPASpookSoundManager.h"
 #import "iCarousel.h"
 #import "SGIPodSourceViewController.h"
+#import "SGRdioSourceViewController.h"
 #import "ExplodingTextViewController.h"
 
 @implementation SGCarouselViewController
@@ -59,8 +60,11 @@
     carousel.contentOffset = CGSizeMake(0, -50);
     wrap = NO;
     //Set up our sources
-    carouselSourceViewControllers = [[NSArray alloc] initWithObjects: [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil],  [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], nil];
-    
+    carouselSourceViewControllers = [[NSArray alloc] initWithObjects: [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGRdioSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil],  [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], nil];
+    for (id vc in carouselSourceViewControllers)
+    {
+        [vc carouselDidSendViewToBack];
+    }
     currentCarouselSource = [[carouselSourceViewControllers objectAtIndex:0] source];
     [[carouselSourceViewControllers objectAtIndex:0] carouselDidBringViewToFront];
 }

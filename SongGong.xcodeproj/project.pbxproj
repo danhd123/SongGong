@@ -49,6 +49,8 @@
 		BC8F929C13D375E500824DB6 /* SGRdioSource.m in Sources */ = {isa = PBXBuildFile; fileRef = BC8F929B13D375E500824DB6 /* SGRdioSource.m */; };
 		BCA82C6413D36ADD00679629 /* gray_bar_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = BCA82C6313D36ADD00679629 /* gray_bar_gradient.png */; };
 		BCBA88A813D271A400639D2C /* ipod-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBA88A713D271A400639D2C /* ipod-icon.png */; };
+		BCC1BFC613D38876004C0EE2 /* SGRdioSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BCC1BFC413D38876004C0EE2 /* SGRdioSourceViewController.m */; };
+		BCC1BFC713D38876004C0EE2 /* SGRdioSourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BCC1BFC513D38876004C0EE2 /* SGRdioSourceViewController.xib */; };
 		BCD1DECA13D2D67E000603F0 /* NSAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD1DEC713D2D67E000603F0 /* NSAttributedString+Attributes.m */; };
 		BCD1DECB13D2D67E000603F0 /* OHAttributedLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD1DEC913D2D67E000603F0 /* OHAttributedLabel.m */; };
 		BCD1DECD13D2D714000603F0 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCD1DECC13D2D714000603F0 /* CoreText.framework */; };
@@ -117,6 +119,9 @@
 		BC8F929B13D375E500824DB6 /* SGRdioSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGRdioSource.m; sourceTree = SOURCE_ROOT; };
 		BCA82C6313D36ADD00679629 /* gray_bar_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_bar_gradient.png; sourceTree = SOURCE_ROOT; };
 		BCBA88A713D271A400639D2C /* ipod-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipod-icon.png"; path = "Resources/ipod-icon.png"; sourceTree = SOURCE_ROOT; };
+		BCC1BFC313D38876004C0EE2 /* SGRdioSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGRdioSourceViewController.h; sourceTree = SOURCE_ROOT; };
+		BCC1BFC413D38876004C0EE2 /* SGRdioSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGRdioSourceViewController.m; sourceTree = SOURCE_ROOT; };
+		BCC1BFC513D38876004C0EE2 /* SGRdioSourceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGRdioSourceViewController.xib; sourceTree = SOURCE_ROOT; };
 		BCD1DEC613D2D67E000603F0 /* NSAttributedString+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Attributes.h"; sourceTree = SOURCE_ROOT; };
 		BCD1DEC713D2D67E000603F0 /* NSAttributedString+Attributes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+Attributes.m"; sourceTree = SOURCE_ROOT; };
 		BCD1DEC813D2D67E000603F0 /* OHAttributedLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OHAttributedLabel.h; sourceTree = SOURCE_ROOT; };
@@ -297,6 +302,9 @@
 			children = (
 				BC8F929A13D375E500824DB6 /* SGRdioSource.h */,
 				BC8F929B13D375E500824DB6 /* SGRdioSource.m */,
+				BCC1BFC313D38876004C0EE2 /* SGRdioSourceViewController.h */,
+				BCC1BFC413D38876004C0EE2 /* SGRdioSourceViewController.m */,
+				BCC1BFC513D38876004C0EE2 /* SGRdioSourceViewController.xib */,
 			);
 			name = "Rdio Source";
 			sourceTree = "<group>";
@@ -375,6 +383,7 @@
 				A7462BA713D3779600C5CEB5 /* mainicons_r_4.png in Resources */,
 				A7462BA813D3779600C5CEB5 /* mainicons_r_5.png in Resources */,
 				A7462BAD13D37B7D00C5CEB5 /* ExplodingTextViewController.xib in Resources */,
+				BCC1BFC713D38876004C0EE2 /* SGRdioSourceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -402,6 +411,7 @@
 				A7462BAC13D37B7D00C5CEB5 /* ExplodingTextViewController.m in Sources */,
 				BC8F929C13D375E500824DB6 /* SGRdioSource.m in Sources */,
 				A7462BB013D3841800C5CEB5 /* DummySource.m in Sources */,
+				BCC1BFC613D38876004C0EE2 /* SGRdioSourceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

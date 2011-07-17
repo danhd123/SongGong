@@ -9,7 +9,7 @@
 #import "SGRdioSource.h"
 
 @implementation SGRdioSource
-@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor;
+@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor, delegate;
 
 - (id)init
 {
