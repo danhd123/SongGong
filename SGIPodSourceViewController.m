@@ -32,6 +32,7 @@
         iPodSource = [[SGIPodSource alloc] init];
         iPodSource.delegate = self;
         // Custom initialization
+        playerViewController = [[SGGenericPlayerView alloc] initWithNibName:@"SGGenericPlayerView" bundle:nil];
     }
     return self;
 }
@@ -103,6 +104,7 @@
         [self.view setNeedsDisplay];
         //myPlaylistsLabel.text = iPodSource;
     }
+    [playerViewController setPlayItem:item];
     
 }
 
@@ -124,30 +126,40 @@
 
 -(void)carouselDidBringViewToFront
 {
-    [self performSelector:@selector(pushGenericPlayer) withObject:nil afterDelay:3.0];
+    if (iPodSource.currentItem != nil)
+        [self performSelector:@selector(pushGenericPlayer) withObject:nil afterDelay:3.0];
     topView.hidden = NO;
     colorSplash.hidden = NO;
 }
 
 -(void)carouselDidSendViewToBack
 {
-    artworkOrIcon.image = [UIImage imageNamed:@"ipod-icon"];
+    artworkOrIcon.image = [UIImage imageNamed:@"mainicons_r_2"];
     topView.hidden = YES;
     colorSplash.hidden = YES;
     [self.view setNeedsDisplay];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(pushGenericPlayer) object:nil];
 }
+
 - (void)pushGenericPlayer
 {
-    SGGenericPlayerView *pv = [[SGGenericPlayerView alloc] initWithNibName:@"SGGenericPlayerView" bundle:nil];
-    pv.source = self.source;
-    pv.view.bounds = self.view.superview.superview.bounds;
-    [self.view.superview.superview addSubview:pv.view];
-    pv.view.bounds = [SongGongAppDelegate mainView].bounds;
-    pv.view.alpha = 0.0f;
-    [self.view.superview.superview addSubview:pv.view];
-    pv.playItem = self.source.currentPlaylist.currentItem;
-    playerViewController = pv;
+     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(pushGenericPlayer) object:nil];
+    
+    if (iPodSource.currentItem == nil)
+        return;
+    
+    if (!playerViewController)
+    {
+        playerViewController = [[SGGenericPlayerView alloc] initWithNibName:@"SGGenericPlayerView" bundle:nil];
+    }
+    
+    playerViewController.source = self.source;
+    playerViewController.view.bounds = self.view.superview.superview.bounds;
+    [self.view.superview.superview addSubview:playerViewController.view];
+    playerViewController.view.bounds = [SongGongAppDelegate mainView].bounds;
+    playerViewController.view.alpha = 0.0f;
+    [self.view.superview.superview addSubview:playerViewController.view];
+    playerViewController.playItem = self.source.currentPlaylist.currentItem;
     [UIView beginAnimations:@"pushGenericPlayer" context:nil];
     
     [UIView setAnimationDidStopSelector:@selector(hideGenericPlayer:finished:context:)]; 
@@ -174,12 +186,12 @@
 
 - (void)hideGenericPlayer:(NSString *)animationID finished:(BOOL)finished context:(id)context
 {
-    SGGenericPlayerView *pvc = (SGGenericPlayerView *)context;
+//    SGGenericPlayerView *pvc = (SGGenericPlayerView *)context;
     if ([animationID isEqualToString:@"popGenericPlayer"])
     {
-        [pvc.view removeFromSuperview];
-        [pvc release];
-        pvc = nil;
+//        [pvc.view removeFromSuperview];
+//        [pvc release];
+//        pvc = nil;
     }
 }
 
@@ -207,6 +219,8 @@
 
 - (void)mediaDidChange:(id <SGMediaItem>)media
 {
+    [self performSelector:@selector(pushGenericPlayer) withObject:nil afterDelay:3.0];
+    
     [self updateUIForItem:media];
     if (media)
     {
