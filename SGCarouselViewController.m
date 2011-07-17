@@ -158,7 +158,7 @@
     [button setTitle:[[carouselSources objectAtIndex:index] stringValue] forState:UIControlStateNormal];
     [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
     button.titleLabel.font = [button.titleLabel.font fontWithSize:50];
-    [button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
+    //[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
     button.tag = index;
     return button;
 
