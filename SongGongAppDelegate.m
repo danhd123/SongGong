@@ -52,6 +52,14 @@
     NSError *activationError = nil;
     
     if (![audioSession setActive:YES error:&activationError]) { NSLog(@"%@", activationError); }
+    OSStatus propertySetError = 0;
+    UInt32 allowMixing = true;
+    
+    propertySetError = AudioSessionSetProperty (
+                                                kAudioSessionProperty_OverrideCategoryMixWithOthers,  // 1
+                                                sizeof (allowMixing),                                 // 2
+                                                &allowMixing                                          // 3
+                                                );
 
     return YES;
 }
