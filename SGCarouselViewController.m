@@ -68,6 +68,7 @@
 - (void)nextItem:(id)sender
 {
     LOG_CALL;    
+    [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
 }
 
 - (void)prevItem:(id)sender
@@ -94,6 +95,7 @@
 - (void)nextSource:(id)sender
 {
     LOG_CALL;
+    [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
 
 }
 
