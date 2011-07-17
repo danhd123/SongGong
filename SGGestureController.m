@@ -182,10 +182,10 @@
     switch (recognizer.numberOfTouches)
     {
         case 1:
-            [delegate prevItem:self];
+            [delegate nextItem:self];
             break;
         case 2:
-            [delegate prevSource:self];
+//            [delegate prevSource:self];
             break;
         default:
             break;
@@ -198,10 +198,10 @@
     switch (recognizer.numberOfTouches)
     {
         case 1:
-            [delegate nextItem:self];
+            [delegate prevItem:self];
             break;
         case 2:
-            [delegate nextSource:self];
+//            [delegate nextSource:self];
             break;
         default:
             break;

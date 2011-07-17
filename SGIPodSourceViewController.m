@@ -9,6 +9,11 @@
 #import "SGIPodSourceViewController.h"
 #import "SGIPodSource.h"
 
+@interface SGIPodSourceViewController ()
+- (void)updateUIForItem:(id<SGMediaItem>)item;
+@end
+
+
 @implementation SGIPodSourceViewController
 @synthesize source = iPodSource;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -34,11 +39,16 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self updateUIForItem:iPodSource.currentItem];
+    
+    [(NSObject *)self.source addObserver:self forKeyPath:@"currentItem" options:0 context:nil]; 
     // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload
 {
+    [(NSObject *)self.source removeObserver:self forKeyPath:@"currentItem"];
     [artworkOrIcon release];
     artworkOrIcon = nil;
     [playlistNameLabel release];
@@ -60,12 +70,31 @@
     return (interfaceOrientation == UIInterfaceOrientationLandscapeRight || interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+#pragma mark - 
+
+- (void)updateUIForItem:(id<SGMediaItem>)item
+{
+    artworkOrIcon.image = item.thumbnail;
+    titleLabel.text = item.title;
+    artistLabel.text = item.artist;
+    playlistNameLabel.text = iPodSource.currentPlaylist.title;
+    //myPlaylistsLabel.text = iPodSource;
+    
+}
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+{
+    if ([keyPath isEqualToString:@"currentItem"])
+    {
+        [self updateUIForItem:iPodSource.currentItem];
+    }
+}
+
 #pragma mark SGCarouselViewController Protocol
 
 
 - (UIView *)carouselDisplayView
 {
-    
     return self.view;
 }
 
@@ -74,6 +103,7 @@
     artworkOrIcon.image = iPodSource.currentItem.thumbnail;
     [self.view setNeedsDisplayInRect:artworkOrIcon.bounds];
 }
+
 -(void)carouselWillSendViewToBack
 {
     artworkOrIcon.image = [UIImage imageNamed:@"ipod-icon"];
@@ -89,4 +119,5 @@
     [iPodSource release];
     [super dealloc];
 }
+
 @end

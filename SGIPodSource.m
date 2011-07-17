@@ -304,7 +304,7 @@
 - (MPMediaItem *)mpItem
 {
     MPMediaQuery *query = [MPMediaQuery songsQuery];
-    MPMediaPropertyPredicate *mpp = [MPMediaPropertyPredicate predicateWithValue:self.persistentId forProperty:MPMediaPlaylistPropertyPersistentID comparisonType:MPMediaPredicateComparisonEqualTo];
+    MPMediaPropertyPredicate *mpp = [MPMediaPropertyPredicate predicateWithValue:self.persistentId forProperty:MPMediaItemPropertyPersistentID comparisonType:MPMediaPredicateComparisonEqualTo];
     [query addFilterPredicate:mpp];
     NSArray *items = [query items];
     if (items.count > 0)
