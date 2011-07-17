@@ -60,28 +60,9 @@
     return (interfaceOrientation == UIInterfaceOrientationLandscapeRight || interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
-#pragma mark SGCarouselProtocol
+#pragma mark SGCarouselViewController Protocol
 
 
-- (void)stop:(id)sender
-{
-    
-}
-
-- (void)togglePlay:(id)sender
-{
-    
-}
-
-- (id <SGMediaPlaylist>)previousPlaylist
-{
-    return nil;
-}
-
-- (id <SGMediaPlaylist>)nextPlaylist
-{
-    return nil;
-}
 - (UIView *)carouselDisplayView
 {
     
