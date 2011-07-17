@@ -65,5 +65,6 @@
 @protocol SGSourceDelegate <NSObject>
 
 - (void)playlistWillChange:(NSString *)newPlaylistName direction:(int)direction;
+-(void)mediaDidChange:(id <SGMediaItem>)media;
 
 @end

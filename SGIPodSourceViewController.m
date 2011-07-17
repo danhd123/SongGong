@@ -11,6 +11,7 @@
 #import "SGIPodSource.h"
 #import "SGCarouselProtocols.h"
 #import "ExplodingTextViewController.h"
+#import "SongGongAppDelegate.h"
 
 @interface SGIPodSourceViewController ()
 - (void)updateUIForItem:(id<SGMediaItem>)item;
@@ -91,11 +92,17 @@
 
 - (void)updateUIForItem:(id<SGMediaItem>)item
 {
-    artworkOrIcon.image = item.thumbnail;
-    titleLabel.text = item.title;
-    artistLabel.text = item.artist;
-    playlistNameLabel.text = iPodSource.currentPlaylist.title;
-    //myPlaylistsLabel.text = iPodSource;
+    if (!item)
+    {
+        [self popGenericPlayer];
+    } else {
+        artworkOrIcon.image = item.thumbnail;
+        titleLabel.text = item.title;
+        artistLabel.text = item.artist;
+        playlistNameLabel.text = iPodSource.currentPlaylist.title;
+        [self.view setNeedsDisplay];
+        //myPlaylistsLabel.text = iPodSource;
+    }
     
 }
 
@@ -136,10 +143,10 @@
     pv.source = self.source;
     pv.view.bounds = self.view.superview.superview.bounds;
     [self.view.superview.superview addSubview:pv.view];
-    pv.playItem = self.source.currentPlaylist.currentItem;
-    pv.view.bounds = self.view.superview.superview.bounds;
+    pv.view.bounds = [SongGongAppDelegate mainView].bounds;
     pv.view.alpha = 0.0f;
     [self.view.superview.superview addSubview:pv.view];
+    pv.playItem = self.source.currentPlaylist.currentItem;
     playerViewController = pv;
     [UIView beginAnimations:@"pushGenericPlayer" context:nil];
     
@@ -151,6 +158,11 @@
 }
 - (void)popGenericPlayer
 {
+    if (!playerViewController || playerViewController.view.alpha != 1.0)
+    {
+        return;
+    }
+        
     [UIView beginAnimations:@"popGenericPlayer" context:playerViewController];
     
     [UIView setAnimationDidStopSelector:@selector(hideGenericPlayer:finished:context:)]; 
@@ -190,7 +202,18 @@
     if (!newPlaylistName)
         newPlaylistName = @"Library";
     [ExplodingTextViewController explodeText:newPlaylistName];
-    [self animatePlaylistView:(direction == 0) newName:newPlaylistName];
+  //  [self animatePlaylistView:(direction == 0) newName:newPlaylistName];
+}
+
+- (void)mediaDidChange:(id <SGMediaItem>)media
+{
+    [self updateUIForItem:media];
+    if (media)
+    {
+    
+    } else {
+
+    }
 }
 
 #pragma mark animations

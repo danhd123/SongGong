@@ -111,13 +111,19 @@
 {
     if (self.currentItem == nil)
     {
+        [self willChangeValueForKey:@"currentItem"];
         [self play:nil];
+        [self didChangeValueForKey:@"currentItem"];
+        [delegate mediaDidChange:self.currentItem];
     } else {
         if ([MPMusicPlayerController applicationMusicPlayer].playbackState == MPMusicPlaybackStatePlaying)
         {
             [[MPMusicPlayerController applicationMusicPlayer] pause];
         } else {
+            [self willChangeValueForKey:@"currentItem"];
             [[MPMusicPlayerController applicationMusicPlayer] play];
+            [self didChangeValueForKey:@"currentItem"];
+            [delegate mediaDidChange:self.currentItem];
         }
     }
     
@@ -202,18 +208,25 @@
         if ([[MPMusicPlayerController applicationMusicPlayer] playbackState] != MPMusicPlaybackStatePlaying)
         {
             [[MPMusicPlayerController applicationMusicPlayer] play];
+            [delegate mediaDidChange:self.currentItem];
         }
         return;
     }
+    [self willChangeValueForKey:@"currentItem"];
     [[MPMusicPlayerController applicationMusicPlayer] skipToPreviousItem];
     [[MPMusicPlayerController applicationMusicPlayer] play];
+    [self didChangeValueForKey:@"currentItem"];
+    [delegate mediaDidChange:self.currentItem];
     return;
 }
 
 - (void)playNextItem
 {
+    [self willChangeValueForKey:@"currentItem"];
     [[MPMusicPlayerController applicationMusicPlayer] skipToNextItem];
     [[MPMusicPlayerController applicationMusicPlayer] play];
+    [self didChangeValueForKey:@"currentItem"];
+    [delegate mediaDidChange:self.currentItem];
     return;
 }
 
@@ -355,7 +368,9 @@
 
 - (void)togglePlay:(id)sender
 {
+    [self willChangeValueForKey:@"currentItem"];
     [[MPMusicPlayerController applicationMusicPlayer] play];
+    [self didChangeValueForKey:@"currentItem"];
 }
 - (float)progress
 {
