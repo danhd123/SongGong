@@ -135,6 +135,7 @@
 {
     LOG_CALL;    
     [OPASpookSoundManager playShortSound:@"nav-Wall.aiff" disposeWhenDone:NO];
+ //   [[carouselSourceViewControllers objectAtIndex:currentCarouselItemIndex] popGenericController];
 }
 
 - (void)showDetail:(id)sender

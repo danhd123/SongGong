@@ -217,7 +217,7 @@
             //Nothing for 1 finger swipe up yet
             break;
         case 2:
-            [delegate prevPlaylist:self];
+            [delegate nextPlaylist:self];
             break;
         default:
             break;
@@ -233,7 +233,7 @@
             //Nothing for 1 finger swipe down yet
             break;
         case 2:
-            [delegate nextPlaylist:self];
+            [delegate prevPlaylist:self];
             break;
         default:
             break;
