@@ -54,8 +54,8 @@
     carousel = (iCarousel *)self.view;
     carousel.type = iCarouselTypeCylinder;
     wrap = NO;
+    //Set up our sources
     
-    // Do any additional setup after loading the view from its nib.
 }
 
 - (void)viewDidUnload

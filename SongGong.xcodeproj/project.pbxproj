@@ -17,6 +17,7 @@
 		A7C4193513D2545C00C12455 /* SGCarouselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C4193013D2545C00C12455 /* SGCarouselViewController.xib */; };
 		A7C4193613D2545C00C12455 /* SGGestureController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C4193213D2545C00C12455 /* SGGestureController.m */; };
 		A7D636D813D2662500E6F541 /* OPASpookSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D636D713D2662500E6F541 /* OPASpookSoundManager.m */; };
+		A7D636DB13D26D1200E6F541 /* SGIPodSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D636DA13D26D1200E6F541 /* SGIPodSource.m */; };
 		A7E0002713D15A3D0048B9EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002613D15A3D0048B9EC /* UIKit.framework */; };
 		A7E0002913D15A3D0048B9EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002813D15A3D0048B9EC /* Foundation.framework */; };
 		A7E0002B13D15A3D0048B9EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002A13D15A3D0048B9EC /* CoreGraphics.framework */; };
@@ -51,6 +52,8 @@
 		A7C4193213D2545C00C12455 /* SGGestureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGestureController.m; sourceTree = SOURCE_ROOT; };
 		A7D636D613D2662500E6F541 /* OPASpookSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPASpookSoundManager.h; sourceTree = SOURCE_ROOT; };
 		A7D636D713D2662500E6F541 /* OPASpookSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPASpookSoundManager.m; sourceTree = SOURCE_ROOT; };
+		A7D636D913D26D1200E6F541 /* SGIPodSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SGIPodSource.h; path = SongGong.xcodeproj/SGIPodSource.h; sourceTree = SOURCE_ROOT; };
+		A7D636DA13D26D1200E6F541 /* SGIPodSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGIPodSource.m; path = SongGong.xcodeproj/SGIPodSource.m; sourceTree = SOURCE_ROOT; };
 		A7E0002213D15A3D0048B9EC /* SongGong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongGong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E0002613D15A3D0048B9EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A7E0002813D15A3D0048B9EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -172,6 +175,8 @@
 				A7EA404D13D164FC008D9551 /* SongGongAppDelegate.m */,
 				BCEDBD8F13D2343400BEA8FA /* SGCarouselProtocols.h */,
 				A7E0002D13D15A3D0048B9EC /* Supporting Files */,
+				A7D636D913D26D1200E6F541 /* SGIPodSource.h */,
+				A7D636DA13D26D1200E6F541 /* SGIPodSource.m */,
 			);
 			path = SongGong;
 			sourceTree = "<group>";
@@ -262,6 +267,7 @@
 				A7B38D3D13D2623C0067C53D /* OPAAudioQueueObject.m in Sources */,
 				A7D636D813D2662500E6F541 /* OPASpookSoundManager.m in Sources */,
 				BC6D345613D25995006DA25F /* iCarousel.m in Sources */,
+				A7D636DB13D26D1200E6F541 /* SGIPodSource.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
