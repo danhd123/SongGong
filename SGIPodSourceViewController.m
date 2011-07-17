@@ -7,7 +7,9 @@
 //
 
 #import "SGIPodSourceViewController.h"
+#import "SGGenericPlayerView.h"
 #import "SGIPodSource.h"
+#import "SGCarouselProtocols.h"
 
 @interface SGIPodSourceViewController ()
 - (void)updateUIForItem:(id<SGMediaItem>)item;
@@ -98,18 +100,24 @@
     return self.view;
 }
 
--(void)carouselWillBringViewToFront
+-(void)carouselDidBringViewToFront
 {
-    artworkOrIcon.image = iPodSource.currentItem.thumbnail;
-    [self.view setNeedsDisplayInRect:artworkOrIcon.bounds];
+    [self performSelector:@selector(pushGenericPlayer) withObject:nil afterDelay:3.0];
 }
 
--(void)carouselWillSendViewToBack
+-(void)carouselDidSendViewToBack
 {
     artworkOrIcon.image = [UIImage imageNamed:@"ipod-icon"];
-    [self.view setNeedsDisplayInRect:artworkOrIcon.bounds];
+    [self.view setNeedsDisplay];
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(pushGenericPlayer) object:nil];
 }
-
+- (void)pushGenericPlayer
+{
+    SGGenericPlayerView *pv = [[SGGenericPlayerView alloc] initWithNibName:@"SGGenericPlayerView" bundle:nil];
+    pv.playItem = self.source.currentPlaylist.currentItem;
+    pv.view.bounds = self.view.bounds;
+    [self.view.superview addSubview:pv.view];
+}
 - (void)dealloc {
     [artworkOrIcon release];
     [playlistNameLabel release];

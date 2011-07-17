@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "SGCarouselProtocols.h"
 
-@class SGIPodSource;
+@class SGIPodSource, SGGenericPlayerView;
 
 @interface SGIPodSourceViewController : UIViewController <SGCarouselItemViewController>
 {
@@ -20,6 +20,8 @@
     IBOutlet UILabel *artistLabel;
     IBOutlet UILabel *myPlaylistsLabel;
     BOOL iconMode;
+    NSTimer *switchToPlayerViewTimer;
+    SGGenericPlayerView *playerViewController;
 }
 
 @end

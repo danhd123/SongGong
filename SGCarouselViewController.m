@@ -177,12 +177,14 @@
     LOG_CALL;
     if (incarousel.currentItemIndex != currentCarouselItemIndex)
     {
+        [[carouselSourceViewControllers objectAtIndex:currentCarouselItemIndex] carouselDidSendViewToBack];
         currentCarouselItemIndex = incarousel.currentItemIndex;
         [currentCarouselSource stop:self];
         
         currentCarouselSource = [[carouselSourceViewControllers objectAtIndex:currentCarouselItemIndex] source];
         [NSObject cancelPreviousPerformRequestsWithTarget:currentCarouselSource];
         [(NSObject *)currentCarouselSource performSelector:@selector(play:) withObject:nil afterDelay:0.1];
+        [[carouselSourceViewControllers objectAtIndex:currentCarouselItemIndex] carouselDidBringViewToFront];
     }
 }
 
