@@ -114,9 +114,17 @@
 - (void)pushGenericPlayer
 {
     SGGenericPlayerView *pv = [[SGGenericPlayerView alloc] initWithNibName:@"SGGenericPlayerView" bundle:nil];
+    pv.source = self.source;
     pv.playItem = self.source.currentPlaylist.currentItem;
     pv.view.bounds = self.view.bounds;
     [self.view.superview addSubview:pv.view];
+    playerViewController = pv;
+}
+- (void)popGenericPlayer
+{
+    [playerViewController.view removeFromSuperview];
+    [playerViewController release];
+    playerViewController = nil;
 }
 - (void)dealloc {
     [artworkOrIcon release];

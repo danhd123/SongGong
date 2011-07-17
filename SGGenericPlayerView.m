@@ -31,6 +31,9 @@
 }
 - (void)setPlayItem:(NSObject<SGMediaItem> *)aPlayItem
 {
+    listeningToLabel.text = [NSString stringWithFormat:@"Listening to: %@", self.source.sourceName];
+    colorSplashView.backgroundColor = self.source.splashColor;
+
     if (playItem != aPlayItem)
     {
         [aPlayItem retain];
@@ -52,8 +55,6 @@
     attributedLabel.attributedText = mas;
     songProgress.progress = playItem.progress;
     artworkView.image = playItem.thumbnail;
-    listeningToLabel.text = [NSString stringWithFormat:@"Listening to: %@", self.source.sourceName];
-    colorSplashView.backgroundColor = self.source.splashColor;
 }
 - (void)didReceiveMemoryWarning
 {
