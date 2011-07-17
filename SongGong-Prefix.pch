@@ -12,3 +12,19 @@
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
 #endif
+
+
+#define SGLOGGING
+#define LOG_CALLS
+
+#ifdef SGLOGGING
+#define SGLog NSLog
+#else
+#define SGLog
+#endif
+
+#ifdef LOG_CALLS
+#define LOG_CALL SGLog(@"%@ %@", [self class], NSStringFromSelector(_cmd))
+#else
+#define LOG_CALL
+#endif

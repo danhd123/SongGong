@@ -10,12 +10,15 @@
 
 @protocol SGGestureControllerDelegate;
 
-@interface SGGestureController : NSObject
-@property (nonatomic, retain) NSArray *gestureRecognizers;
+@interface SGGestureController : NSObject <UIGestureRecognizerDelegate>
+@property (nonatomic, retain) NSMutableArray *gestureRecognizers;
 @property (readwrite, assign) id <SGGestureControllerDelegate> delegate;
+- (id)initWithDelegate:(id <SGGestureControllerDelegate>)inDelegate;
 @end
 
 @protocol SGGestureControllerDelegate <NSObject>
+
+- (UIView *)view;
 
 - (void)nextItem:(id)sender;   //swipe right
 - (void)prevItem:(id)sender;   //swipe left

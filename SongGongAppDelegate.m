@@ -8,10 +8,6 @@
 
 #import "SongGongAppDelegate.h"
 
-#import "FirstViewController.h"
-
-#import "SecondViewController.h"
-
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>
 #import "SGCarouselViewController.h"

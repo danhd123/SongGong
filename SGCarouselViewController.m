@@ -17,7 +17,7 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        NSLog(@"%@ %@", [self class], NSStringFromSelector(_cmd));
+        LOG_CALL;
         // Custom initialization
     }
     return self;
@@ -42,10 +42,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"%@ %@", [self class], NSStringFromSelector(_cmd));
-    NSLog(@"%@", [self.view window]);
-    
-    self.gestureController = [[SGGestureController alloc] init];
+    LOG_CALL;    
+
+    self.gestureController = [[SGGestureController alloc] initWithDelegate:self];
     self.gestureController.delegate = self;
     
     // Do any additional setup after loading the view from its nib.
@@ -61,49 +60,49 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 #pragma mark SGBlindGestureViewControllerDelegate
 - (void)nextItem:(id)sender
 {
-    NSLog(@"Next Item");
+    LOG_CALL;    
 }
 
 - (void)prevItem:(id)sender
 {
-    NSLog(@"Previous Item");
+    LOG_CALL;    
 }
 
 - (void)nextPlaylist:(id)sender
 {
-    NSLog(@"Next Playlist");
+    LOG_CALL;    
    
 }
 
 - (void)prevPlaylist:(id)sender
 {
-    NSLog(@"Previous Playlist");
+    LOG_CALL;    
 
 }
 
 
 - (void)nextSource:(id)sender
 {
-    NSLog(@"Previous Source");
+    LOG_CALL;    
 
 }
 
 - (void)prevSource:(id)sender
 {
-    NSLog(@"Previous Source");
+    LOG_CALL;    
 
 }
 
 
 - (void)playPauseToggle:(id)sender
 {
-    NSLog(@"play pause");
+    LOG_CALL;    
     [currentCarouselSource.currentPlaylist.currentItem togglePlay:self];
 
 }
@@ -111,20 +110,20 @@
 
 - (void)showNavigator:(id)sender
 {
-    NSLog(@"show Navigator");
+    LOG_CALL;    
 
 }
 
 - (void)showDetail:(id)sender
 {
-    NSLog(@"showDetail");
+    LOG_CALL;    
 
 }
 
 
 - (void)showSpecialAction:(id)sender
 {
-    NSLog(@"show special action");
+    LOG_CALL;    
 
 }
 

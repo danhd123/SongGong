@@ -14,19 +14,9 @@
 		A7E0002713D15A3D0048B9EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002613D15A3D0048B9EC /* UIKit.framework */; };
 		A7E0002913D15A3D0048B9EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002813D15A3D0048B9EC /* Foundation.framework */; };
 		A7E0002B13D15A3D0048B9EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002A13D15A3D0048B9EC /* CoreGraphics.framework */; };
-		A7EA404E13D164FC008D9551 /* first.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA404313D164FC008D9551 /* first.png */; };
-		A7EA404F13D164FC008D9551 /* first@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA404413D164FC008D9551 /* first@2x.png */; };
-		A7EA405013D164FC008D9551 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EA404613D164FC008D9551 /* FirstViewController.m */; };
-		A7EA405213D164FC008D9551 /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA404813D164FC008D9551 /* second.png */; };
-		A7EA405313D164FC008D9551 /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A7EA404913D164FC008D9551 /* second@2x.png */; };
-		A7EA405413D164FC008D9551 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EA404B13D164FC008D9551 /* SecondViewController.m */; };
 		A7EA405513D164FC008D9551 /* SongGongAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EA404D13D164FC008D9551 /* SongGongAppDelegate.m */; };
 		A7EA405713D16550008D9551 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A7EA405613D16550008D9551 /* main.m */; };
 		A7EA405A13D1656D008D9551 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405813D1656D008D9551 /* InfoPlist.strings */; };
-		A7EA406313D16578008D9551 /* FirstViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405B13D16578008D9551 /* FirstViewController_iPad.xib */; };
-		A7EA406413D16578008D9551 /* FirstViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405D13D16578008D9551 /* FirstViewController_iPhone.xib */; };
-		A7EA406513D16578008D9551 /* SecondViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405F13D16578008D9551 /* SecondViewController_iPad.xib */; };
-		A7EA406613D16578008D9551 /* SecondViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7EA406113D16578008D9551 /* SecondViewController_iPhone.xib */; };
 		BCEDBD9313D23BCF00BEA8FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */; };
 		BCEDBD9413D23BCF00BEA8FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9213D23BCF00BEA8FA /* AVFoundation.framework */; };
 		BCEDBD9613D2431400BEA8FA /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9513D2431400BEA8FA /* MediaPlayer.framework */; };
@@ -46,22 +36,10 @@
 		A7E0002A13D15A3D0048B9EC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A7E0002E13D15A3D0048B9EC /* SongGong-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SongGong-Info.plist"; sourceTree = "<group>"; };
 		A7E0003413D15A3D0048B9EC /* SongGong-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SongGong-Prefix.pch"; sourceTree = "<group>"; };
-		A7EA404313D164FC008D9551 /* first.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = first.png; sourceTree = SOURCE_ROOT; };
-		A7EA404413D164FC008D9551 /* first@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "first@2x.png"; sourceTree = SOURCE_ROOT; };
-		A7EA404513D164FC008D9551 /* FirstViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = SOURCE_ROOT; };
-		A7EA404613D164FC008D9551 /* FirstViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = SOURCE_ROOT; };
-		A7EA404813D164FC008D9551 /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = SOURCE_ROOT; };
-		A7EA404913D164FC008D9551 /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = SOURCE_ROOT; };
-		A7EA404A13D164FC008D9551 /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = SOURCE_ROOT; };
-		A7EA404B13D164FC008D9551 /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = SOURCE_ROOT; };
 		A7EA404C13D164FC008D9551 /* SongGongAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SongGongAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		A7EA404D13D164FC008D9551 /* SongGongAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SongGongAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		A7EA405613D16550008D9551 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = SOURCE_ROOT; };
 		A7EA405913D1656D008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
-		A7EA405C13D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
-		A7EA405E13D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/FirstViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
-		A7EA406013D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPad.xib; sourceTree = SOURCE_ROOT; };
-		A7EA406213D16578008D9551 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/SecondViewController_iPhone.xib; sourceTree = SOURCE_ROOT; };
 		BCEDBD8F13D2343400BEA8FA /* SGCarouselProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCarouselProtocols.h; sourceTree = SOURCE_ROOT; };
 		BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		BCEDBD9213D23BCF00BEA8FA /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -125,20 +103,8 @@
 				A7C4193013D2545C00C12455 /* SGCarouselViewController.xib */,
 				A7C4193113D2545C00C12455 /* SGGestureController.h */,
 				A7C4193213D2545C00C12455 /* SGGestureController.m */,
-				A7EA404313D164FC008D9551 /* first.png */,
-				A7EA404413D164FC008D9551 /* first@2x.png */,
-				A7EA404513D164FC008D9551 /* FirstViewController.h */,
-				A7EA404613D164FC008D9551 /* FirstViewController.m */,
-				A7EA404813D164FC008D9551 /* second.png */,
-				A7EA404913D164FC008D9551 /* second@2x.png */,
-				A7EA404A13D164FC008D9551 /* SecondViewController.h */,
-				A7EA404B13D164FC008D9551 /* SecondViewController.m */,
 				A7EA404C13D164FC008D9551 /* SongGongAppDelegate.h */,
 				A7EA404D13D164FC008D9551 /* SongGongAppDelegate.m */,
-				A7EA405B13D16578008D9551 /* FirstViewController_iPad.xib */,
-				A7EA405D13D16578008D9551 /* FirstViewController_iPhone.xib */,
-				A7EA405F13D16578008D9551 /* SecondViewController_iPad.xib */,
-				A7EA406113D16578008D9551 /* SecondViewController_iPhone.xib */,
 				BCEDBD8F13D2343400BEA8FA /* SGCarouselProtocols.h */,
 				A7E0002D13D15A3D0048B9EC /* Supporting Files */,
 			);
@@ -207,15 +173,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7EA404E13D164FC008D9551 /* first.png in Resources */,
-				A7EA404F13D164FC008D9551 /* first@2x.png in Resources */,
-				A7EA405213D164FC008D9551 /* second.png in Resources */,
-				A7EA405313D164FC008D9551 /* second@2x.png in Resources */,
 				A7EA405A13D1656D008D9551 /* InfoPlist.strings in Resources */,
-				A7EA406313D16578008D9551 /* FirstViewController_iPad.xib in Resources */,
-				A7EA406413D16578008D9551 /* FirstViewController_iPhone.xib in Resources */,
-				A7EA406513D16578008D9551 /* SecondViewController_iPad.xib in Resources */,
-				A7EA406613D16578008D9551 /* SecondViewController_iPhone.xib in Resources */,
 				A7C4193513D2545C00C12455 /* SGCarouselViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,8 +185,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A7EA405013D164FC008D9551 /* FirstViewController.m in Sources */,
-				A7EA405413D164FC008D9551 /* SecondViewController.m in Sources */,
 				A7EA405513D164FC008D9551 /* SongGongAppDelegate.m in Sources */,
 				A7EA405713D16550008D9551 /* main.m in Sources */,
 				A7C4193313D2545C00C12455 /* SGBlindGestureView.m in Sources */,
@@ -246,38 +202,6 @@
 				A7EA405913D1656D008D9551 /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		A7EA405B13D16578008D9551 /* FirstViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7EA405C13D16578008D9551 /* en */,
-			);
-			name = FirstViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
-		A7EA405D13D16578008D9551 /* FirstViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7EA405E13D16578008D9551 /* en */,
-			);
-			name = FirstViewController_iPhone.xib;
-			sourceTree = "<group>";
-		};
-		A7EA405F13D16578008D9551 /* SecondViewController_iPad.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7EA406013D16578008D9551 /* en */,
-			);
-			name = SecondViewController_iPad.xib;
-			sourceTree = "<group>";
-		};
-		A7EA406113D16578008D9551 /* SecondViewController_iPhone.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A7EA406213D16578008D9551 /* en */,
-			);
-			name = SecondViewController_iPhone.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
