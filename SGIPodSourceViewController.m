@@ -55,6 +55,16 @@
 #pragma mark SGCarouselProtocol
 
 
+- (void)stop:(id)sender
+{
+    
+}
+
+- (void)togglePlay:(id)sender
+{
+    
+}
+
 - (id <SGMediaPlaylist>)previousPlaylist
 {
     return nil;
