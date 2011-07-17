@@ -13,9 +13,12 @@
 
 @implementation SGGenericPlayerView
 @synthesize songProgress;
+@synthesize topView;
+@synthesize listeningToLabel;
 @synthesize artworkView;
 @synthesize attributedLabel;
 @synthesize playItem;
+@synthesize source;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -40,11 +43,15 @@
         return;
     NSMutableAttributedString *mas = [[NSMutableAttributedString alloc] initWithString:[title stringByAppendingFormat:@"\n%@\n%@", artist, album]];
     [mas setTextColor:[UIColor colorWithRed:140.0/255.0 green:198.0/255.0 blue:63.0/255.0 alpha:1.0] range:NSMakeRange(0, title.length)];
+    [mas setFontFamily:@"Helvetica" size:20.0 bold:YES italic:NO range:NSMakeRange(0, title.length)];
     [mas setTextColor:[UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:242.0/255.0 alpha:1.0] range:NSMakeRange(title.length+1, artist.length)];
+    [mas setFontFamily:@"Helvetica" size:17.0 bold:YES italic:NO range:NSMakeRange(title.length+1, artist.length)];
     [mas setTextColor:[UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0] range:NSMakeRange(title.length+2+artist.length, album.length)];
+    [mas setFontFamily:@"Helvetica" size:17.0 bold:YES italic:NO range:NSMakeRange(title.length+2+artist.length, album.length)];
     attributedLabel.attributedText = mas;
     songProgress.progress = playItem.progress;
     artworkView.image = playItem.thumbnail;
+    listeningToLabel.text = [NSString stringWithFormat:@"Listening to: %@", self.source.sourceName];
 }
 - (void)didReceiveMemoryWarning
 {
@@ -60,6 +67,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    [topView setBackgroundColor:[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"gray_bar_gradient"]]];
 }
 
 - (void)viewDidUnload
@@ -67,6 +75,8 @@
     [self setArtworkView:nil];
     [self setAttributedLabel:nil];
     [self setSongProgress:nil];
+    [self setTopView:nil];
+    [self setListeningToLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -82,6 +92,8 @@
     [artworkView release];
     [attributedLabel release];
     [songProgress release];
+    [topView release];
+    [listeningToLabel release];
     [super dealloc];
 }
 @end
