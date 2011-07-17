@@ -24,6 +24,8 @@
 @property (nonatomic, retain) id <SGMediaPlaylist> currentPlaylist;
 @property (readwrite, retain) NSArray *playlists;
 @property (readwrite, assign) id<SGSourceDelegate> delegate;
+
+@property (readwrite, retain) MPMusicPlayerController *player;
 @end
 
 
@@ -41,6 +43,7 @@
 - (id <SGMediaItem>)previousItem;
 - (id <SGMediaItem>)nextItem;
 - (void)playItem:(id <SGMediaItem>)item;
+@property (readwrite, retain) NSTimer *updateTimer;
 @property (readwrite, retain) NSString *title;
 @property (readwrite, retain) id <SGMediaItem> currentItem;
 @property (readwrite, retain) NSArray *itemIds;

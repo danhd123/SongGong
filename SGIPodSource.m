@@ -10,6 +10,7 @@
 #import <MediaPlayer/MediaPlayer.h>
 #import <CoreGraphics/CoreGraphics.h>
 #import "ExplodingTextViewController.h"
+#import "NSObject+SPInvocationGrabbing.h"
 
 #define PREFERRED_ARTWORK_SIZE 256.0
 
@@ -28,7 +29,7 @@
 @end
 
 @implementation SGIPodSource
-@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor, delegate;
+@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor, delegate, player;
 
 - (id)init
 {
@@ -58,6 +59,7 @@
             [playlist release];
         }
         self.playlists = [NSArray arrayWithArray:thePlaylists];
+        self.player =[MPMusicPlayerController applicationMusicPlayer];
     }
     
     return self;
@@ -81,10 +83,9 @@
     {
         MPMediaQuery *query = [MPMediaQuery songsQuery];
         [[MPMusicPlayerController applicationMusicPlayer] setQueueWithQuery:query];
-                                         
     }
     
-    [[MPMusicPlayerController applicationMusicPlayer] play];
+    [[[MPMusicPlayerController applicationMusicPlayer] onMainAsync:YES] play];
 }
 
 - (void)stop:(id)sender
@@ -123,7 +124,7 @@
             [[MPMusicPlayerController applicationMusicPlayer] pause];
         } else {
             [self willChangeValueForKey:@"currentItem"];
-            [[MPMusicPlayerController applicationMusicPlayer] play];
+            [[[MPMusicPlayerController applicationMusicPlayer] onMainAsync:YES] play];
             [self didChangeValueForKey:@"currentItem"];
             [delegate mediaDidChange:self.currentItem];
         }
@@ -144,13 +145,7 @@
         return;
     
     [delegate playlistWillChange:nextPlaylist.title direction:0];
-    self.currentPlaylist = nextPlaylist;
-    NSLog(@"%@ vs: %@", self.currentPlaylist, nextPlaylist);
-    [self willChangeValueForKey:@"currentItem"];
-    [self play:nil];
-    [self didChangeValueForKey:@"currentItem"];
-    [delegate mediaDidChange:self.currentItem];
-    
+    self.currentPlaylist = nextPlaylist;    
     
 }
 
@@ -164,15 +159,6 @@
         
     }
     [delegate playlistWillChange:prev.title direction:0];
-
-    [self willChangeValueForKey:@"currentItem"];
-    [self play:nil];
-    self.currentPlaylist = prev;
-    [self didChangeValueForKey:@"currentItem"];
-    [delegate mediaDidChange:self.currentItem];
-    
-    
-    return;
 }
 
 - (id <SGMediaPlaylist>)previousPlaylist
@@ -218,14 +204,14 @@
         [[MPMusicPlayerController applicationMusicPlayer] setCurrentPlaybackTime:0.0];
         if ([[MPMusicPlayerController applicationMusicPlayer] playbackState] != MPMusicPlaybackStatePlaying)
         {
-            [[MPMusicPlayerController applicationMusicPlayer] play];
+            [[[MPMusicPlayerController applicationMusicPlayer] onMainAsync:YES] play];
             [delegate mediaDidChange:self.currentItem];
         }
         return;
     }
     [self willChangeValueForKey:@"currentItem"];
     [[MPMusicPlayerController applicationMusicPlayer] skipToPreviousItem];
-    [[MPMusicPlayerController applicationMusicPlayer] play];
+    [[[MPMusicPlayerController applicationMusicPlayer] onMainAsync:YES] play];
     [self didChangeValueForKey:@"currentItem"];
     [delegate mediaDidChange:self.currentItem];
     return;
@@ -235,7 +221,7 @@
 {
     [self willChangeValueForKey:@"currentItem"];
     [[MPMusicPlayerController applicationMusicPlayer] skipToNextItem];
-    [[MPMusicPlayerController applicationMusicPlayer] play];
+    [[[MPMusicPlayerController applicationMusicPlayer] onMainAsync:YES] play];
     [self didChangeValueForKey:@"currentItem"];
     [delegate mediaDidChange:self.currentItem];
     return;
@@ -357,7 +343,21 @@
     self.artist = [item valueForProperty:MPMediaItemPropertyArtist];
     self.album = [item valueForProperty:MPMediaItemPropertyAlbumTitle];
     self.persistentId = [item valueForProperty:MPMediaItemPropertyPersistentID];
-    return self;
+    [[MPMusicPlayerController applicationMusicPlayer] addObserver:self forKeyPath:@"currentPlaybackTime" options:0 context:nil];
+ return self;
+}
+
+- (void)dealloc
+{
+    [[MPMusicPlayerController applicationMusicPlayer] removeObserver:self forKeyPath:@"currentPlaybackTime"];
+    [super dealloc];
+}
+
+- (void)updateProgress:(id)obj
+{
+    [self willChangeValueForKey:@"progress"];
+    
+    [self didChangeValueForKey:@"progress"];    
 }
 
 - (MPMediaItem *)mpItem
@@ -383,8 +383,21 @@
     [[MPMusicPlayerController applicationMusicPlayer] play];
     [self didChangeValueForKey:@"currentItem"];
 }
+
 - (float)progress
 {
     return [[MPMusicPlayerController applicationMusicPlayer] currentPlaybackTime]/[[[self mpItem] valueForProperty:MPMediaItemPropertyPlaybackDuration]doubleValue];
+}
+
+#pragma mark -
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context    
+{
+    if ([keyPath isEqualToString:@"currentPlaybackTime"])
+    {
+        [self willChangeValueForKey:@"progress"];
+        
+        [self didChangeValueForKey:@"progress"];
+        
+    }
 }
 @end

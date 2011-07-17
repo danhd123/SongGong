@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A73D786013D38FED00837A2F /* BlankAudio.png in Resources */ = {isa = PBXBuildFile; fileRef = A73D785F13D38FED00837A2F /* BlankAudio.png */; };
+		A73D786313D39E2C00837A2F /* NSObject+SPInvocationGrabbing.m in Sources */ = {isa = PBXBuildFile; fileRef = A73D786213D39E2B00837A2F /* NSObject+SPInvocationGrabbing.m */; };
 		A7462B6E13D36CF300C5CEB5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B6D13D36CF300C5CEB5 /* icon.png */; };
 		A7462B9F13D3779600C5CEB5 /* mainicons_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B9513D3779600C5CEB5 /* mainicons_1.png */; };
 		A7462BA013D3779600C5CEB5 /* mainicons_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B9613D3779600C5CEB5 /* mainicons_2.png */; };
@@ -62,6 +63,8 @@
 
 /* Begin PBXFileReference section */
 		A73D785F13D38FED00837A2F /* BlankAudio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlankAudio.png; path = Resources/BlankAudio.png; sourceTree = SOURCE_ROOT; };
+		A73D786113D39E2B00837A2F /* NSObject+SPInvocationGrabbing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SPInvocationGrabbing.h"; sourceTree = SOURCE_ROOT; };
+		A73D786213D39E2B00837A2F /* NSObject+SPInvocationGrabbing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SPInvocationGrabbing.m"; sourceTree = SOURCE_ROOT; };
 		A7462B6D13D36CF300C5CEB5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = SOURCE_ROOT; };
 		A7462B9513D3779600C5CEB5 /* mainicons_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainicons_1.png; path = "Resources/carousel icons/mainicons_1.png"; sourceTree = SOURCE_ROOT; };
 		A7462B9613D3779600C5CEB5 /* mainicons_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainicons_2.png; path = "Resources/carousel icons/mainicons_2.png"; sourceTree = SOURCE_ROOT; };
@@ -258,6 +261,8 @@
 		A7E0002C13D15A3D0048B9EC /* SongGong */ = {
 			isa = PBXGroup;
 			children = (
+				A73D786113D39E2B00837A2F /* NSObject+SPInvocationGrabbing.h */,
+				A73D786213D39E2B00837A2F /* NSObject+SPInvocationGrabbing.m */,
 				BC8F929913D3757300824DB6 /* Rdio Source */,
 				A7462BAE13D3841700C5CEB5 /* DummySource.h */,
 				A7462BAF13D3841700C5CEB5 /* DummySource.m */,
@@ -416,6 +421,7 @@
 				BC8F929C13D375E500824DB6 /* SGRdioSource.m in Sources */,
 				A7462BB013D3841800C5CEB5 /* DummySource.m in Sources */,
 				BCC1BFC613D38876004C0EE2 /* SGRdioSourceViewController.m in Sources */,
+				A73D786313D39E2C00837A2F /* NSObject+SPInvocationGrabbing.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

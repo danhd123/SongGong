@@ -67,7 +67,8 @@
     {
         [[SongGongAppDelegate mainView] addSubview:self.view];
         
-        self.view.center = [SongGongAppDelegate mainView].center;
+        self.view.center = CGPointMake(self.view.frame.size.width/2,self.view.frame.size.height/2);
+        //self.view.center = [SongGongAppDelegate mainView].center;
     }
     
     [self retain];
