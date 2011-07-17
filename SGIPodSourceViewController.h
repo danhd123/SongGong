@@ -22,6 +22,7 @@
     BOOL iconMode;
     NSTimer *switchToPlayerViewTimer;
     SGGenericPlayerView *playerViewController;
+    CGRect origPlaylistNameLabelFrame;
 }
 
 @end

@@ -5515,8 +5515,8 @@
 				</dict>
 			</array>
 		</dict>
-		<real>332623763.78665602</real>
-		<string>{1897, 1352}</string>
+		<real>332623893.88275999</real>
+		<string>{1835, 1288}</string>
 		<string>{777, 0}</string>
 		<dict>
 			<key>$class</key>
@@ -7022,8 +7022,8 @@
 				</dict>
 			</array>
 		</dict>
-		<real>332623758.809237</real>
-		<string>{0, 688}</string>
+		<real>332623888.90176302</real>
+		<string>{0, 727}</string>
 		<string>{537, 16}</string>
 		<dict>
 			<key>$class</key>
@@ -27326,10 +27326,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>332623763.78985697</real>
-		<string>{1897, 1352}</string>
+		<real>332623893.88525301</real>
+		<string>{1835, 1288}</string>
 		<string>{777, 0}</string>
-		<string>-didReceiveMemoryWarning</string>
+		<string>-initWithNibName:bundle:</string>
 		<dict>
 			<key>$class</key>
 			<dict>

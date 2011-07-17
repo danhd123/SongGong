@@ -96,18 +96,19 @@
 
 - (void)nextPlaylist:(id)sender
 {
-    LOG_CALL;    
-    [OPASpookSoundManager playShortSound:@"nav-UpDown.aiff" disposeWhenDone:NO];   
+    LOG_CALL;
+    [OPASpookSoundManager playShortSound:@"nav-UpDown.aiff" disposeWhenDone:NO]; 
+    [currentCarouselSource nextPlaylist];
 }
 
 - (void)prevPlaylist:(id)sender
 {
     LOG_CALL;    
     [OPASpookSoundManager playShortSound:@"nav-UpDown.aiff" disposeWhenDone:NO];
-
+    [currentCarouselSource previousPlaylist];
 }
 
-
+//Not used - carousel does this with 2 fingers
 - (void)nextSource:(id)sender
 {
     LOG_CALL;
@@ -115,6 +116,7 @@
 
 }
 
+//Not used - carousel does this with 2 fingers
 - (void)prevSource:(id)sender
 {
     LOG_CALL;    
