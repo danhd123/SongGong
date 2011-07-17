@@ -14,11 +14,12 @@
 @interface SGIPodSourceViewController : UIViewController <SGCarouselItemViewController>
 {
     SGIPodSource *iPodSource;
+    IBOutlet UIImageView *artworkOrIcon;
+    IBOutlet UILabel *playlistNameLabel;
+    IBOutlet UILabel *titleLabel;
+    IBOutlet UILabel *artistLabel;
+    IBOutlet UILabel *myPlaylistsLabel;
+    BOOL iconMode;
 }
-- (id <SGMediaPlaylist>)previousPlaylist;
-- (id <SGMediaPlaylist>)nextPlaylist;
-@property (readwrite, retain) NSString *sourceName;
-@property (nonatomic, readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
-@property (readwrite, retain) NSArray *playlists;
 
 @end

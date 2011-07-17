@@ -13,6 +13,11 @@
 @protocol SGCarouselItemViewController <NSObject>
 @property (readwrite, retain) id <SGCarouselItem> source;
 @property (readonly, retain) UIView *carouselDisplayView;
+@optional
+-(void)carouselWillBringViewToFront;
+-(void)carouselWillSendViewToBack;
+-(void)carouselDidSendViewToBack;
+-(void)carouselDidBringViewToFront;
 @end
 
 @protocol SGCarouselItem <NSObject>

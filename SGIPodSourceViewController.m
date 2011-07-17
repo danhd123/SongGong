@@ -10,23 +10,15 @@
 #import "SGIPodSource.h"
 
 @implementation SGIPodSourceViewController
-@synthesize playlists, sourceName, currentPlaylist, source = iPodSource;
-
+@synthesize source = iPodSource;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         iPodSource = [[SGIPodSource alloc] init];
-        self.sourceName = @"iPod";
         // Custom initialization
     }
     return self;
-}
-
-- (void)dealloc
-{
-    [iPodSource release];
-    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning
@@ -47,6 +39,16 @@
 
 - (void)viewDidUnload
 {
+    [artworkOrIcon release];
+    artworkOrIcon = nil;
+    [playlistNameLabel release];
+    playlistNameLabel = nil;
+    [titleLabel release];
+    titleLabel = nil;
+    [artistLabel release];
+    artistLabel = nil;
+    [myPlaylistsLabel release];
+    myPlaylistsLabel = nil;
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -86,5 +88,24 @@
     return self.view;
 }
 
+-(void)carouselWillBringViewToFront
+{
+    artworkOrIcon.image = iPodSource.currentPlaylist.currentItem.thumbnail;
+    [self.view setNeedsDisplayInRect:artworkOrIcon.bounds];
+}
+-(void)carouselWillSendViewToBack
+{
+    artworkOrIcon.image = [UIImage imageNamed:@"ipod-icon"];
+    [self.view setNeedsDisplayInRect:artworkOrIcon.bounds];
+}
 
+- (void)dealloc {
+    [artworkOrIcon release];
+    [playlistNameLabel release];
+    [titleLabel release];
+    [artistLabel release];
+    [myPlaylistsLabel release];
+    [iPodSource release];
+    [super dealloc];
+}
 @end
