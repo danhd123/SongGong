@@ -23,6 +23,7 @@
 @property (readwrite, retain) NSString *sourceName;
 @property (nonatomic, readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
 @property (readwrite, retain) NSArray *playlists;
+@property (readwrite, assign) id<SGSourceDelegate> delegate;
 @end
 
 

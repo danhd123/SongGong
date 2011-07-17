@@ -27,7 +27,7 @@
 @end
 
 @implementation SGIPodSource
-@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor;
+@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor, delegate;
 
 - (id)init
 {
@@ -96,6 +96,7 @@
 {
     if (playlist != nil)
     {
+        
         NSString *pid = [(SGIPodPlaylist *)playlist persistentId];
         MPMediaQuery *query = [MPMediaQuery songsQuery];
         MPMediaPropertyPredicate *mpp = [MPMediaPropertyPredicate predicateWithValue:pid forProperty:MPMediaPlaylistPropertyPersistentID comparisonType:MPMediaPredicateComparisonEqualTo];
@@ -133,19 +134,26 @@
     if (!next)
         return;
     
+    [delegate playlistWillChange:next.title direction:0];
+    self.currentPlaylist = next;
+    [self play:nil];
     
     
 }
 
 - (void)playPreviousPlaylist
 {
-    id <SGMediaPlaylist>prev = [self nextPlaylist];
+    id <SGMediaPlaylist>prev = [self previousPlaylist];
     if (!prev)
     {
         //Go back to "Library"
+        [delegate playlistWillChange:@"Library" direction:0];
         
     }
-
+    [delegate playlistWillChange:prev.title direction:0];
+    self.currentPlaylist = prev;
+    
+    
     return;
 }
 

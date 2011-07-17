@@ -15,6 +15,7 @@
 - (void)updateUIForItem:(id<SGMediaItem>)item;
 - (void)animatePlaylistView:(BOOL)upYesDownNo newName:(NSString *)name;
 - (void)animatePlaylistViewPart2:(NSString *)animationId finished:(BOOL)finished context:(id)context;
+- (void)hideGenericPlayer:(NSString *)animationID finished:(BOOL)finished context:(id)context;
 @end
 
 
@@ -25,6 +26,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         iPodSource = [[SGIPodSource alloc] init];
+        iPodSource.delegate = self;
         // Custom initialization
     }
     return self;
@@ -122,15 +124,39 @@
     pv.source = self.source;
     pv.playItem = self.source.currentPlaylist.currentItem;
     pv.view.bounds = self.view.bounds;
+    pv.view.alpha = 0.0f;
     [self.view.superview addSubview:pv.view];
     playerViewController = pv;
+    [UIView beginAnimations:@"pushGenericPlayer" context:nil];
+    
+    [UIView setAnimationDidStopSelector:@selector(hideGenericPlayer:finished:context:)]; 
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseOut]; 
+    [UIView setAnimationDuration:.45];
+    playerViewController.view.alpha = 1.0f;
+    [UIView commitAnimations];    
 }
 - (void)popGenericPlayer
 {
-    [playerViewController.view removeFromSuperview];
-    [playerViewController release];
-    playerViewController = nil;
+    [UIView beginAnimations:@"popGenericPlayer" context:playerViewController];
+    
+    [UIView setAnimationDidStopSelector:@selector(hideGenericPlayer:finished:context:)]; 
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn]; 
+    [UIView setAnimationDuration:.15];
+    playerViewController.view.alpha = 0.0f;
+    [UIView commitAnimations];
 }
+
+- (void)hideGenericPlayer:(NSString *)animationID finished:(BOOL)finished context:(id)context
+{
+    SGGenericPlayerView *pvc = (SGGenericPlayerView *)context;
+    if ([animationID isEqualToString:@"popGenericPlayer"])
+    {
+        [pvc.view removeFromSuperview];
+        [pvc release];
+        pvc = nil;
+    }
+}
+
 - (void)dealloc {
     [artworkOrIcon release];
     [playlistNameLabel release];
@@ -172,7 +198,7 @@
      [UIView beginAnimations:NSStringFromSelector(_cmd) context:context];
      
      [UIView setAnimationDidStopSelector:@selector(animatePlaylistViewPart2:finished:context:)]; 
-     [UIView setAnimationCurve:UIViewAnimationCurveLinear]; 
+     [UIView setAnimationCurve:UIViewAnimationCurveEaseOut]; 
      [UIView setAnimationDuration:.75]; 
      [UIView setAnimationDelegate:self];
      playlistNameLabel.frame = CGRectMake(origPlaylistNameLabelFrame.origin.x, origPlaylistNameLabelFrame.size.height, origPlaylistNameLabelFrame.size.width, origPlaylistNameLabelFrame.size.height);

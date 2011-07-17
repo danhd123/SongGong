@@ -18,6 +18,7 @@
 -(void)carouselWillSendViewToBack;
 -(void)carouselDidSendViewToBack;
 -(void)carouselDidBringViewToFront;
+-(void)popGenericPlayer;
 @end
 
 @protocol SGCarouselItem <NSObject>
@@ -55,5 +56,11 @@
 - (void)playItem:(id <SGMediaItem>)item;
 @property (readwrite, retain) NSString *title;
 @property (readwrite, retain) id <SGMediaItem> currentItem;
+
+@end
+
+@protocol SGSourceDelegate <NSObject>
+
+- (void)playlistWillChange:(NSString *)newPlaylistName direction:(int)direction;
 
 @end

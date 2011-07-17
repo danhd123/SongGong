@@ -11,7 +11,8 @@
 
 @class SGIPodSource, SGGenericPlayerView;
 
-@interface SGIPodSourceViewController : UIViewController <SGCarouselItemViewController>
+
+@interface SGIPodSourceViewController : UIViewController <SGCarouselItemViewController, SGSourceDelegate>
 {
     SGIPodSource *iPodSource;
     IBOutlet UIImageView *artworkOrIcon;
