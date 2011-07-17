@@ -1,0 +1,47 @@
+//
+//  SGRdioSource.h
+//  SongGong
+//
+//  Created by Daniel DeCovnick on 7/17/11.
+//  Copyright 2011 doubleTwist Corporation. All rights reserved.
+//
+
+#import <Foundation/Foundation.h>
+#import "SGCarouselProtocols.h"
+
+@interface SGRdioSource : NSObject <SGCarouselItem>
+
+- (void)play:(id)sender;
+- (void)togglePlay:(id)sender;
+- (void)stop:(id)sender;
+
+- (id <SGMediaPlaylist>)previousPlaylist;
+- (id <SGMediaPlaylist>)nextPlaylist;
+@property (readwrite, retain) id <SGMediaItem> currentItem;
+@property (readwrite, retain) NSString *sourceName;
+@property (nonatomic, readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
+@property (readwrite, retain) NSArray *playlists;
+@end
+
+
+@interface SGRdioItem : NSObject <SGMediaItem>
+- (void)togglePlay:(id)sender;
+@property (readonly) UIImage *thumbnail;
+@property (readwrite, retain) NSString *title;
+@property (readwrite, retain) NSString *album;
+@property (readwrite, retain) NSString *artist;
+@property (readwrite, retain) NSString *persistentId;
+@end
+
+@interface SGRdioPlaylist : NSObject <SGMediaPlaylist>
+- (id <SGMediaItem>)previousItem;
+- (id <SGMediaItem>)nextItem;
+- (void)playItem:(id <SGMediaItem>)item;
+@property (readwrite, retain) NSString *title;
+@property (readwrite, retain) id <SGMediaItem> currentItem;
+@property (readwrite, retain) NSArray *itemIds;
+@property (readwrite, retain) NSString *persistentId;
+@end
+
+
+

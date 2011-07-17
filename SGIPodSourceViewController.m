@@ -20,6 +20,8 @@
 
 
 @implementation SGIPodSourceViewController
+@synthesize topView;
+@synthesize colorSplash;
 @synthesize source = iPodSource;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,6 +54,9 @@
     
     origPlaylistNameLabelFrame = playlistNameLabel.frame;
     
+    topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gray_bar_gradient"]];
+    colorSplash.backgroundColor = self.source.splashColor;
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -68,6 +73,8 @@
     artistLabel = nil;
     [myPlaylistsLabel release];
     myPlaylistsLabel = nil;
+    [self setTopView:nil];
+    [self setColorSplash:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -110,11 +117,15 @@
 -(void)carouselDidBringViewToFront
 {
     [self performSelector:@selector(pushGenericPlayer) withObject:nil afterDelay:3.0];
+    topView.hidden = NO;
+    colorSplash.hidden = NO;
 }
 
 -(void)carouselDidSendViewToBack
 {
     artworkOrIcon.image = [UIImage imageNamed:@"ipod-icon"];
+    topView.hidden = YES;
+    colorSplash.hidden = YES;
     [self.view setNeedsDisplay];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(pushGenericPlayer) object:nil];
 }
@@ -122,10 +133,12 @@
 {
     SGGenericPlayerView *pv = [[SGGenericPlayerView alloc] initWithNibName:@"SGGenericPlayerView" bundle:nil];
     pv.source = self.source;
+    pv.view.bounds = self.view.superview.superview.bounds;
+    [self.view.superview.superview addSubview:pv.view];
     pv.playItem = self.source.currentPlaylist.currentItem;
-    pv.view.bounds = self.view.bounds;
+    pv.view.bounds = self.view.superview.superview.bounds;
     pv.view.alpha = 0.0f;
-    [self.view.superview addSubview:pv.view];
+    [self.view.superview.superview addSubview:pv.view];
     playerViewController = pv;
     [UIView beginAnimations:@"pushGenericPlayer" context:nil];
     
@@ -164,6 +177,8 @@
     [artistLabel release];
     [myPlaylistsLabel release];
     [iPodSource release];
+    [topView release];
+    [colorSplash release];
     [super dealloc];
 }
 

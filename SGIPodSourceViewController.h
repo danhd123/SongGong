@@ -24,6 +24,10 @@
     NSTimer *switchToPlayerViewTimer;
     SGGenericPlayerView *playerViewController;
     CGRect origPlaylistNameLabelFrame;
+    UIView *topView;
+    UIView *colorSplash;
 }
+@property (nonatomic, retain) IBOutlet UIView *topView;
+@property (nonatomic, retain) IBOutlet UIView *colorSplash;
 
 @end
