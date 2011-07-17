@@ -18,8 +18,16 @@
 @synthesize window = _window;
 @synthesize tabBarController = _tabBarController;
 
+static SongGongAppDelegate *s_appDelegate;
+
++ (UIView *)mainView
+{
+    return s_appDelegate.window.rootViewController.view;
+}
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    s_appDelegate = self;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 //    UIViewController *viewController1, *viewController2;

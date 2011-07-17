@@ -12,6 +12,7 @@
 #import "OPASpookSoundManager.h"
 #import "iCarousel.h"
 #import "SGIPodSourceViewController.h"
+#import "ExplodingTextViewController.h"
 
 @implementation SGCarouselViewController
 @synthesize gestureController;
@@ -130,6 +131,7 @@
     [currentCarouselSource togglePlay:self];
     [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
 
+    [ExplodingTextViewController explodeText:@"♫"];
 }
 
 

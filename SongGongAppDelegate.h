@@ -13,6 +13,7 @@
 {
     IBOutlet SGCarouselViewController *mCarouselViewController;
 }
++ (UIView *)mainView;
 @property (nonatomic, retain) UIWindow *window;
 
 @property (nonatomic, retain) UITabBarController *tabBarController;

@@ -18,6 +18,8 @@
 		A7462BA613D3779600C5CEB5 /* mainicons_r_3.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B9C13D3779600C5CEB5 /* mainicons_r_3.png */; };
 		A7462BA713D3779600C5CEB5 /* mainicons_r_4.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B9D13D3779600C5CEB5 /* mainicons_r_4.png */; };
 		A7462BA813D3779600C5CEB5 /* mainicons_r_5.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B9E13D3779600C5CEB5 /* mainicons_r_5.png */; };
+		A7462BAC13D37B7D00C5CEB5 /* ExplodingTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7462BAA13D37B7D00C5CEB5 /* ExplodingTextViewController.m */; };
+		A7462BAD13D37B7D00C5CEB5 /* ExplodingTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7462BAB13D37B7D00C5CEB5 /* ExplodingTextViewController.xib */; };
 		A763031C13D2754C00F7682D /* SGIPodSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A763031B13D2754C00F7682D /* SGIPodSource.m */; };
 		A7B38D3113D2616A0067C53D /* nav-LeftRight.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7B38D2E13D2616A0067C53D /* nav-LeftRight.aiff */; };
 		A7B38D3213D2616A0067C53D /* nav-UpDown.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7B38D2F13D2616A0067C53D /* nav-UpDown.aiff */; };
@@ -65,6 +67,9 @@
 		A7462B9C13D3779600C5CEB5 /* mainicons_r_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainicons_r_3.png; path = "Resources/carousel icons/mainicons_r_3.png"; sourceTree = SOURCE_ROOT; };
 		A7462B9D13D3779600C5CEB5 /* mainicons_r_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainicons_r_4.png; path = "Resources/carousel icons/mainicons_r_4.png"; sourceTree = SOURCE_ROOT; };
 		A7462B9E13D3779600C5CEB5 /* mainicons_r_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainicons_r_5.png; path = "Resources/carousel icons/mainicons_r_5.png"; sourceTree = SOURCE_ROOT; };
+		A7462BA913D37B7D00C5CEB5 /* ExplodingTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplodingTextViewController.h; sourceTree = "<group>"; };
+		A7462BAA13D37B7D00C5CEB5 /* ExplodingTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplodingTextViewController.m; sourceTree = "<group>"; };
+		A7462BAB13D37B7D00C5CEB5 /* ExplodingTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExplodingTextViewController.xib; sourceTree = "<group>"; };
 		A763031A13D2754C00F7682D /* SGIPodSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGIPodSource.h; sourceTree = SOURCE_ROOT; };
 		A763031B13D2754C00F7682D /* SGIPodSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGIPodSource.m; sourceTree = SOURCE_ROOT; };
 		A7B38D2E13D2616A0067C53D /* nav-LeftRight.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = "nav-LeftRight.aiff"; path = "Resources/navSounds/nav-LeftRight.aiff"; sourceTree = SOURCE_ROOT; };
@@ -204,6 +209,9 @@
 		A7E0001713D15A3D0048B9EC = {
 			isa = PBXGroup;
 			children = (
+				A7462BA913D37B7D00C5CEB5 /* ExplodingTextViewController.h */,
+				A7462BAA13D37B7D00C5CEB5 /* ExplodingTextViewController.m */,
+				A7462BAB13D37B7D00C5CEB5 /* ExplodingTextViewController.xib */,
 				A7E0002C13D15A3D0048B9EC /* SongGong */,
 				A7E0002513D15A3D0048B9EC /* Frameworks */,
 				A7E0002313D15A3D0048B9EC /* Products */,
@@ -348,6 +356,7 @@
 				A7462BA613D3779600C5CEB5 /* mainicons_r_3.png in Resources */,
 				A7462BA713D3779600C5CEB5 /* mainicons_r_4.png in Resources */,
 				A7462BA813D3779600C5CEB5 /* mainicons_r_5.png in Resources */,
+				A7462BAD13D37B7D00C5CEB5 /* ExplodingTextViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,6 +381,7 @@
 				BC2128A213D2B8250087CE59 /* SGGenericPlayerView.m in Sources */,
 				BCD1DECA13D2D67E000603F0 /* NSAttributedString+Attributes.m in Sources */,
 				BCD1DECB13D2D67E000603F0 /* OHAttributedLabel.m in Sources */,
+				A7462BAC13D37B7D00C5CEB5 /* ExplodingTextViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
