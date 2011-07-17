@@ -55,6 +55,8 @@
     artworkOrIcon.image = [UIImage imageNamed:@"mainicons_r_1"];
     topView.hidden = YES;
     colorSplash.hidden = YES;
+    titleLabel.hidden = YES;
+    artistLabel.hidden = YES;
     [self.view setNeedsDisplay];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(pushGenericPlayer) object:nil];
 }

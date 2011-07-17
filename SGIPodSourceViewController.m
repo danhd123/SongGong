@@ -130,6 +130,8 @@
         [self performSelector:@selector(pushGenericPlayer) withObject:nil afterDelay:3.0];
     topView.hidden = NO;
     colorSplash.hidden = NO;
+    titleLabel.hidden = NO;
+    artistLabel.hidden = NO;
 }
 
 -(void)carouselDidSendViewToBack
@@ -137,6 +139,8 @@
     artworkOrIcon.image = [UIImage imageNamed:@"mainicons_r_2"];
     topView.hidden = YES;
     colorSplash.hidden = YES;
+    titleLabel.hidden = YES;
+    artistLabel.hidden = YES;
     [self.view setNeedsDisplay];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(pushGenericPlayer) object:nil];
 }
@@ -154,8 +158,6 @@
     }
     
     playerViewController.source = self.source;
-    playerViewController.view.bounds = self.view.superview.superview.bounds;
-    [self.view.superview.superview addSubview:playerViewController.view];
     playerViewController.view.bounds = [SongGongAppDelegate mainView].bounds;
     playerViewController.view.alpha = 0.0f;
     [self.view.superview.superview addSubview:playerViewController.view];
