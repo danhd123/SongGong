@@ -57,7 +57,6 @@
 						<string key="NSFrame">{{281, 34}, {179, 228}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
 						<int key="IBUIContentMode">7</int>
@@ -137,6 +136,14 @@
 						<reference key="destination" ref="701486254"/>
 					</object>
 					<int key="connectionID">9</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">songProgress</string>
+						<reference key="source" ref="372490531"/>
+						<reference key="destination" ref="528278962"/>
+					</object>
+					<int key="connectionID">12</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -228,7 +235,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">11</int>
+			<int key="maxID">12</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -261,11 +268,13 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>artworkView</string>
 							<string>attributedLabel</string>
+							<string>songProgress</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>UIImageView</string>
 							<string>OHAttributedLabel</string>
+							<string>UIProgressView</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -274,6 +283,7 @@
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<string>artworkView</string>
 							<string>attributedLabel</string>
+							<string>songProgress</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -284,6 +294,10 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">attributedLabel</string>
 								<string key="candidateClassName">OHAttributedLabel</string>
+							</object>
+							<object class="IBToOneOutletInfo">
+								<string key="name">songProgress</string>
+								<string key="candidateClassName">UIProgressView</string>
 							</object>
 						</object>
 					</object>

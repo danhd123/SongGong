@@ -43,6 +43,7 @@
 @property (readwrite, retain) NSString *title;
 @property (readwrite, retain) NSString *album;
 @property (readwrite, retain) NSString *artist;
+@property (readonly, assign) float progress;
 
 @end
 

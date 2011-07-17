@@ -14,7 +14,9 @@
 @interface SGGenericPlayerView : UIViewController {
     UIImageView *artworkView;
     OHAttributedLabel *attributedLabel;
+    UIProgressView *songProgress;
 }
+@property (nonatomic, retain) IBOutlet UIProgressView *songProgress;
 
 @property (nonatomic, retain) IBOutlet UIImageView *artworkView;
 @property (nonatomic, retain) IBOutlet OHAttributedLabel *attributedLabel;

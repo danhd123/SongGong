@@ -322,5 +322,8 @@
 {
     [[MPMusicPlayerController applicationMusicPlayer] play];
 }
-
+- (float)progress
+{
+    return [[MPMusicPlayerController applicationMusicPlayer] currentPlaybackTime]/[[[self mpItem] valueForProperty:MPMediaItemPropertyPlaybackDuration]doubleValue];
+}
 @end

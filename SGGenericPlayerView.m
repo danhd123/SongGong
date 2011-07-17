@@ -12,6 +12,7 @@
 #import "NSAttributedString+Attributes.h"
 
 @implementation SGGenericPlayerView
+@synthesize songProgress;
 @synthesize artworkView;
 @synthesize attributedLabel;
 @synthesize playItem;
@@ -42,6 +43,8 @@
     [mas setTextColor:[UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:242.0/255.0 alpha:1.0] range:NSMakeRange(title.length+1, artist.length)];
     [mas setTextColor:[UIColor colorWithRed:102.0/255.0 green:102.0/255.0 blue:102.0/255.0 alpha:1.0] range:NSMakeRange(title.length+2+artist.length, album.length)];
     attributedLabel.attributedText = mas;
+    songProgress.progress = playItem.progress;
+    artworkView.image = playItem.thumbnail;
 }
 - (void)didReceiveMemoryWarning
 {
@@ -63,6 +66,7 @@
 {
     [self setArtworkView:nil];
     [self setAttributedLabel:nil];
+    [self setSongProgress:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -77,6 +81,7 @@
 - (void)dealloc {
     [artworkView release];
     [attributedLabel release];
+    [songProgress release];
     [super dealloc];
 }
 @end
