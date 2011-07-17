@@ -17,6 +17,7 @@
 @property (readwrite, retain) NSString *sourceName;
 @property (readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
 @property (readwrite, retain) NSArray *playlists;
+@property (readonly, retain) UIView *carouselDisplayView;
 
 @end
 

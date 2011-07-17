@@ -11,6 +11,7 @@
 #import "SGGestureController.h"
 #import "OPASpookSoundManager.h"
 #import "iCarousel.h"
+#import "SGIPodSource.h"
 
 @implementation SGCarouselViewController
 @synthesize gestureController;
@@ -21,7 +22,6 @@
     if (self) {
         LOG_CALL;
         NSLog(@"%@ %@", [self class], NSStringFromSelector(_cmd));
-        carouselSources = [[NSArray alloc] initWithObjects:[NSNumber numberWithInt:0], nil];
         // Custom initialization
     }
     return self;
@@ -55,7 +55,7 @@
     carousel.type = iCarouselTypeCylinder;
     wrap = NO;
     //Set up our sources
-    
+    carouselSources = [[NSArray alloc] initWithObjects:[[SGIPodSource alloc] init], nil];
 }
 
 - (void)viewDidUnload
@@ -152,16 +152,7 @@
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
-    UIImage *image = [UIImage imageNamed:@"first@2x.png"];
-    UIButton *button = [[[UIButton alloc] initWithFrame:CGRectMake(0, 0, image.size.width, image.size.height)] autorelease];
-    [button setBackgroundImage:image forState:UIControlStateNormal];
-    [button setTitle:[[carouselSources objectAtIndex:index] stringValue] forState:UIControlStateNormal];
-    [button setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    button.titleLabel.font = [button.titleLabel.font fontWithSize:50];
-    //[button addTarget:self action:@selector(buttonTapped:) forControlEvents:UIControlEventTouchUpInside];
-    button.tag = index;
-    return button;
-
+    return [[carouselSources objectAtIndex:index] carouselDisplayView];
 }
 
 

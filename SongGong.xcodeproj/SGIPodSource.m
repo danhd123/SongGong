@@ -30,7 +30,11 @@
 {
     return nil;
 }
-
+- (UIView *)carouselDisplayView
+{
+    UIImageView *iv = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"ipod-icon"]];
+    return [iv autorelease];
+}
 @end
 
 @implementation SGIPodPlaylist
