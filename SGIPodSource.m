@@ -126,6 +126,29 @@
 
 #pragma mark -
 
+
+- (void)playNextPlaylist
+{
+    id <SGMediaPlaylist>next = [self nextPlaylist];
+    if (!next)
+        return;
+    
+    
+    
+}
+
+- (void)playPreviousPlaylist
+{
+    id <SGMediaPlaylist>prev = [self nextPlaylist];
+    if (!prev)
+    {
+        //Go back to "Library"
+        
+    }
+
+    return;
+}
+
 - (id <SGMediaPlaylist>)previousPlaylist
 {
     if (self.currentPlaylist)
@@ -134,6 +157,8 @@
         if (ind > 0)
         {
             return [self.playlists objectAtIndex:ind-1];
+        } else {
+            return nil;
         }
     }
     return nil;
@@ -151,7 +176,8 @@
             return [self.playlists objectAtIndex:ind];
         }
     }
-
+    
+    //default - first playlist in the list
     return self.playlists.count > 0 ? [self.playlists objectAtIndex:0] : nil;
 }
 

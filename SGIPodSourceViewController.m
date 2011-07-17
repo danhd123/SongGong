@@ -13,6 +13,8 @@
 
 @interface SGIPodSourceViewController ()
 - (void)updateUIForItem:(id<SGMediaItem>)item;
+- (void)animatePlaylistView:(BOOL)upYesDownNo newName:(NSString *)name;
+- (void)animatePlaylistViewPart2:(NSString *)animationId finished:(BOOL)finished context:(id)context;
 @end
 
 
@@ -45,6 +47,9 @@
     [self updateUIForItem:iPodSource.currentItem];
     
     [(NSObject *)self.source addObserver:self forKeyPath:@"currentItem" options:0 context:nil]; 
+    
+    origPlaylistNameLabelFrame = playlistNameLabel.frame;
+    
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -134,6 +139,44 @@
     [myPlaylistsLabel release];
     [iPodSource release];
     [super dealloc];
+}
+
+#pragma mark delegate methods
+//0 = up, 1 = down
+- (void)playlistWillChange:(NSString *)newPlaylistName direction:(int)direction
+{
+    if (!newPlaylistName)
+        newPlaylistName = @"Library";
+    [self animatePlaylistView:(direction == 0) newName:newPlaylistName];
+}
+
+#pragma mark animations
+- (void)animatePlaylistView:(BOOL)upYesDownNo newName:(NSString *)name
+{
+	[UIView beginAnimations:NSStringFromSelector(_cmd) context:name];
+
+	[UIView setAnimationDidStopSelector:@selector(animatePlaylistViewPart2:finished:context:)]; 
+	[UIView setAnimationCurve:UIViewAnimationCurveLinear]; 
+	[UIView setAnimationDuration:.25]; 
+	[UIView setAnimationDelegate:self];
+	playlistNameLabel.frame = CGRectMake(origPlaylistNameLabelFrame.origin.x, -(origPlaylistNameLabelFrame.size.height + 10), origPlaylistNameLabelFrame.size.width, origPlaylistNameLabelFrame.size.height);
+	[UIView commitAnimations];
+}
+
+- (void)animatePlaylistViewPart2:(NSString *)animationId finished:(BOOL)finished context:(id)context
+{
+    playlistNameLabel.text = (NSString *)context;
+    
+    playlistNameLabel.frame = CGRectMake(origPlaylistNameLabelFrame.origin.x, self.view.frame.size.height + 10, origPlaylistNameLabelFrame.size.width, origPlaylistNameLabelFrame.size.height);
+
+     [UIView beginAnimations:NSStringFromSelector(_cmd) context:context];
+     
+     [UIView setAnimationDidStopSelector:@selector(animatePlaylistViewPart2:finished:context:)]; 
+     [UIView setAnimationCurve:UIViewAnimationCurveLinear]; 
+     [UIView setAnimationDuration:.75]; 
+     [UIView setAnimationDelegate:self];
+     playlistNameLabel.frame = CGRectMake(origPlaylistNameLabelFrame.origin.x, origPlaylistNameLabelFrame.size.height, origPlaylistNameLabelFrame.size.width, origPlaylistNameLabelFrame.size.height);
+     [UIView commitAnimations];
 }
 
 @end
