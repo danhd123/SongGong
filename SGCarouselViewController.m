@@ -52,10 +52,13 @@
     self.gestureController = [[SGGestureController alloc] initWithDelegate:self];
     self.gestureController.delegate = self;
     carousel = (iCarousel *)self.view;
-    carousel.type = iCarouselTypeCylinder;
+    carousel.type = iCarouselTypeRotary;
+    carousel.perspective = -.01;
+    carousel.viewpointOffset = CGSizeMake(0, -150);
+    carousel.contentOffset = CGSizeMake(0, -150);
     wrap = NO;
     //Set up our sources
-    carouselSources = [[NSArray alloc] initWithObjects:[[SGIPodSource alloc] init], nil];
+    carouselSources = [[NSArray alloc] initWithObjects:[[SGIPodSource alloc] init], [[SGIPodSource alloc] init], [[SGIPodSource alloc] init], [[SGIPodSource alloc] init], [[SGIPodSource alloc] init],  [[SGIPodSource alloc] init], nil];
 }
 
 - (void)viewDidUnload
@@ -143,7 +146,7 @@
     [OPASpookSoundManager playShortSound:@"nav-Wall.aiff" disposeWhenDone:NO];
 
 }
-#pragma mark iCarousel delegate
+#pragma mark iCarousel datasource
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
@@ -155,5 +158,14 @@
     return [[carouselSources objectAtIndex:index] carouselDisplayView];
 }
 
+#pragma mark iCarousel delegate
+- (BOOL)carouselShouldWrap:(iCarousel *)carousel
+{
+    return wrap;
+}
+- (float)carouselItemWidth:(iCarousel *)carousel
+{
+    return 500.0f; 
+}
 
 @end
