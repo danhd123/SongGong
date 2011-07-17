@@ -11,7 +11,7 @@
 #import "SGGestureController.h"
 #import "OPASpookSoundManager.h"
 #import "iCarousel.h"
-#import "SGIPodSource.h"
+#import "SGIPodSourceViewController.h"
 
 @implementation SGCarouselViewController
 @synthesize gestureController;
@@ -53,12 +53,12 @@
     self.gestureController.delegate = self;
     carousel = (iCarousel *)self.view;
     carousel.type = iCarouselTypeRotary;
-    carousel.perspective = -.01;
-    carousel.viewpointOffset = CGSizeMake(0, -150);
-    carousel.contentOffset = CGSizeMake(0, -150);
+    carousel.perspective = -.002;
+    carousel.viewpointOffset = CGSizeMake(0, -50);
+    carousel.contentOffset = CGSizeMake(0, -50);
     wrap = NO;
     //Set up our sources
-    carouselSources = [[NSArray alloc] initWithObjects:[[SGIPodSource alloc] init], [[SGIPodSource alloc] init], [[SGIPodSource alloc] init], [[SGIPodSource alloc] init], [[SGIPodSource alloc] init],  [[SGIPodSource alloc] init], nil];
+    carouselSources = [[NSArray alloc] initWithObjects: [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil],  [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], nil];
 }
 
 - (void)viewDidUnload
@@ -72,7 +72,7 @@
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight);
+    return (interfaceOrientation == UIInterfaceOrientationLandscapeLeft || interfaceOrientation == UIInterfaceOrientationLandscapeRight || interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
 #pragma mark SGBlindGestureViewControllerDelegate
@@ -91,8 +91,7 @@
 - (void)nextPlaylist:(id)sender
 {
     LOG_CALL;    
-    [OPASpookSoundManager playShortSound:@"nav-UpDown.aiff" disposeWhenDone:NO];
-   
+    [OPASpookSoundManager playShortSound:@"nav-UpDown.aiff" disposeWhenDone:NO];   
 }
 
 - (void)prevPlaylist:(id)sender
@@ -159,13 +158,13 @@
 }
 
 #pragma mark iCarousel delegate
-- (BOOL)carouselShouldWrap:(iCarousel *)carousel
+- (BOOL)carouselShouldWrap:(iCarousel *)aCarousel
 {
     return wrap;
 }
-- (float)carouselItemWidth:(iCarousel *)carousel
+- (float)carouselItemWidth:(iCarousel *)aCarousel
 {
-    return 500.0f; 
+    return [[[carouselSources objectAtIndex:aCarousel.currentItemIndex] carouselDisplayView] bounds].size.width*1.25; //because everything else is that big too
 }
 
 @end

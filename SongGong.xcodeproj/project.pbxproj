@@ -26,6 +26,8 @@
 		A7EA405A13D1656D008D9551 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A7EA405813D1656D008D9551 /* InfoPlist.strings */; };
 		BC6D345613D25995006DA25F /* iCarousel.m in Sources */ = {isa = PBXBuildFile; fileRef = BC6D345513D25995006DA25F /* iCarousel.m */; };
 		BC6D345913D25A3E006DA25F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6D345813D25A3E006DA25F /* QuartzCore.framework */; };
+		BC81E5EF13D295D1006A1E67 /* SGIPodSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81E5ED13D295D1006A1E67 /* SGIPodSourceViewController.m */; };
+		BC81E5F013D295D1006A1E67 /* SGIPodSourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC81E5EE13D295D1006A1E67 /* SGIPodSourceViewController.xib */; };
 		BCBA88A813D271A400639D2C /* ipod-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBA88A713D271A400639D2C /* ipod-icon.png */; };
 		BCEDBD9313D23BCF00BEA8FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */; };
 		BCEDBD9413D23BCF00BEA8FA /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCEDBD9213D23BCF00BEA8FA /* AVFoundation.framework */; };
@@ -64,6 +66,9 @@
 		BC6D345413D25995006DA25F /* iCarousel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iCarousel.h; sourceTree = SOURCE_ROOT; };
 		BC6D345513D25995006DA25F /* iCarousel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iCarousel.m; sourceTree = SOURCE_ROOT; };
 		BC6D345813D25A3E006DA25F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BC81E5EC13D295D1006A1E67 /* SGIPodSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGIPodSourceViewController.h; sourceTree = SOURCE_ROOT; };
+		BC81E5ED13D295D1006A1E67 /* SGIPodSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGIPodSourceViewController.m; sourceTree = SOURCE_ROOT; };
+		BC81E5EE13D295D1006A1E67 /* SGIPodSourceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGIPodSourceViewController.xib; sourceTree = SOURCE_ROOT; };
 		BCBA88A713D271A400639D2C /* ipod-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipod-icon.png"; path = "Resources/ipod-icon.png"; sourceTree = SOURCE_ROOT; };
 		BCEDBD8F13D2343400BEA8FA /* SGCarouselProtocols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCarouselProtocols.h; sourceTree = SOURCE_ROOT; };
 		BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -94,6 +99,9 @@
 			children = (
 				A763031A13D2754C00F7682D /* SGIPodSource.h */,
 				A763031B13D2754C00F7682D /* SGIPodSource.m */,
+				BC81E5EC13D295D1006A1E67 /* SGIPodSourceViewController.h */,
+				BC81E5ED13D295D1006A1E67 /* SGIPodSourceViewController.m */,
+				BC81E5EE13D295D1006A1E67 /* SGIPodSourceViewController.xib */,
 			);
 			name = "iPod Source";
 			sourceTree = "<group>";
@@ -252,6 +260,7 @@
 				A7B38D3213D2616A0067C53D /* nav-UpDown.aiff in Resources */,
 				A7B38D3313D2616A0067C53D /* nav-Wall.aiff in Resources */,
 				BCBA88A813D271A400639D2C /* ipod-icon.png in Resources */,
+				BC81E5F013D295D1006A1E67 /* SGIPodSourceViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +281,7 @@
 				A7D636D813D2662500E6F541 /* OPASpookSoundManager.m in Sources */,
 				BC6D345613D25995006DA25F /* iCarousel.m in Sources */,
 				A763031C13D2754C00F7682D /* SGIPodSource.m in Sources */,
+				BC81E5EF13D295D1006A1E67 /* SGIPodSourceViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
