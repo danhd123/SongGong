@@ -35,6 +35,8 @@
     NSString *title = playItem.title;
     NSString *artist = playItem.artist;
     NSString *album = playItem.album;
+    if (!(title && artist && album))
+        return;
     NSMutableAttributedString *mas = [[NSMutableAttributedString alloc] initWithString:[title stringByAppendingFormat:@"\n%@\n%@", artist, album]];
     [mas setTextColor:[UIColor colorWithRed:140.0/255.0 green:198.0/255.0 blue:63.0/255.0 alpha:1.0] range:NSMakeRange(0, title.length)];
     [mas setTextColor:[UIColor colorWithRed:242.0/255.0 green:242.0/255.0 blue:242.0/255.0 alpha:1.0] range:NSMakeRange(title.length+1, artist.length)];

@@ -61,6 +61,7 @@
     carouselSourceViewControllers = [[NSArray alloc] initWithObjects: [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil],  [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], nil];
     
     currentCarouselSource = [[carouselSourceViewControllers objectAtIndex:0] source];
+    [[carouselSourceViewControllers objectAtIndex:0] carouselDidBringViewToFront];
 }
 
 - (void)viewDidUnload
