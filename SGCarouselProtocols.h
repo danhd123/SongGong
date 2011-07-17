@@ -11,11 +11,13 @@
 @protocol SGMediaItem, SGMediaPlaylist;
 
 @protocol SGCarouselItem <NSObject>
+- (void)togglePlay:(id)sender;
+- (void)stop:(id)sender;
 
 - (id <SGMediaPlaylist>)previousPlaylist;
 - (id <SGMediaPlaylist>)nextPlaylist;
 @property (readwrite, retain) NSString *sourceName;
-@property (readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
+@property (nonatomic, readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
 @property (readwrite, retain) NSArray *playlists;
 @property (readonly, retain) UIView *carouselDisplayView;
 
@@ -24,7 +26,7 @@
 @protocol SGMediaItem <NSObject>
 
 - (void)togglePlay:(id)sender;
-@property (readwrite, retain) UIImage *thumbnail;
+@property (readonly) UIImage *thumbnail;
 @property (readwrite, retain) NSString *title;
 @property (readwrite, retain) NSString *album;
 @property (readwrite, retain) NSString *artist;
