@@ -132,6 +132,7 @@
     colorSplash.hidden = NO;
     titleLabel.hidden = NO;
     artistLabel.hidden = NO;
+    artworkOrIcon.image = self.source.currentItem.thumbnail;
 }
 
 -(void)carouselDidSendViewToBack
