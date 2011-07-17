@@ -19,6 +19,7 @@
 
 - (id <SGMediaPlaylist>)previousPlaylist;
 - (id <SGMediaPlaylist>)nextPlaylist;
+@property (readwrite, retain) id <SGMediaItem> currentItem;
 @property (readwrite, retain) NSString *sourceName;
 @property (nonatomic, readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
 @property (readwrite, retain) NSArray *playlists;

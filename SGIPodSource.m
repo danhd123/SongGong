@@ -15,14 +15,19 @@
 @interface SGIPodSource ()
 - (void) iPodLibraryDidChange: (id) notification;
 - (void) playbackStateChanged: (id) notification;
+- (void) iPodItemChanged: (id) notification;
 @end
 
 @interface SGIPodPlaylist ()
 - (id)initWithiPodMediaItem:(MPMediaItem *)playlistItem;
 @end
 
+@interface SGIPodItem ()
+- (id)initWithiPodItem:(MPMediaItem *)item;
+@end
+
 @implementation SGIPodSource
-@synthesize playlists, sourceName, currentPlaylist;
+@synthesize playlists, sourceName, currentPlaylist, currentItem;
 
 - (id)init
 {
@@ -31,8 +36,6 @@
         // Initialization code here.
         self.sourceName = @"iPod";
         
-        [[MPMediaLibrary defaultMediaLibrary] beginGeneratingLibraryChangeNotifications];
-        
         [[NSNotificationCenter defaultCenter] addObserver:self
                                selector:@selector(playbackStateChanged:)
                                    name:MPMediaLibraryDidChangeNotification
@@ -40,9 +43,10 @@
         
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iPodLibraryDidChange:) name: MPMusicPlayerControllerPlaybackStateDidChangeNotification object:nil];
 
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackStateChanged:) name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:nil];
-
-    
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iPodItemChanged:) name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:nil];
+        [[MPMediaLibrary defaultMediaLibrary] beginGeneratingLibraryChangeNotifications];
+        [[MPMusicPlayerController applicationMusicPlayer] beginGeneratingPlaybackNotifications];
+        
         MPMediaQuery *query = [MPMediaQuery playlistsQuery];
 
         NSMutableArray *thePlaylists = [NSMutableArray arrayWithCapacity:10];
@@ -61,6 +65,8 @@
 - (void)dealloc
 {
     [[MPMediaLibrary defaultMediaLibrary] endGeneratingLibraryChangeNotifications];
+    [[MPMusicPlayerController applicationMusicPlayer] endGeneratingPlaybackNotifications];
+
     [self.playlists release];
     [super dealloc];
 }
@@ -101,7 +107,21 @@
 
 - (void)togglePlay:(id)sender
 {
-    [[MPMusicPlayerController applicationMusicPlayer] play];
+    if (self.currentItem == nil)
+    {
+        [self play:nil];
+    } else {
+        if ([MPMusicPlayerController applicationMusicPlayer].playbackState == MPMusicPlaybackStatePlaying)
+        {
+            [[MPMusicPlayerController applicationMusicPlayer] pause];
+        } else {
+            [[MPMusicPlayerController applicationMusicPlayer] play];
+        }
+    }
+    
+    //TODO: set current playlist
+//    [[MPMusicPlayerController applicationMusicPlayer] ];
+    
 }
 
 #pragma mark -
@@ -137,6 +157,30 @@
 
 #pragma mark - 
 
+- (void)playPreviousItem
+{
+    
+    if ([[MPMusicPlayerController applicationMusicPlayer] playbackState] != MPMusicPlaybackStateStopped && 
+        [[MPMusicPlayerController applicationMusicPlayer] currentPlaybackTime] > 3.0)
+    {
+        [[MPMusicPlayerController applicationMusicPlayer] setCurrentPlaybackTime:0.0];
+        if ([[MPMusicPlayerController applicationMusicPlayer] playbackState] != MPMusicPlaybackStatePlaying)
+        {
+            [[MPMusicPlayerController applicationMusicPlayer] play];
+        }
+        return;
+    }
+    [[MPMusicPlayerController applicationMusicPlayer] skipToPreviousItem];
+    [[MPMusicPlayerController applicationMusicPlayer] play];
+    return;
+}
+
+- (void)playNextItem
+{
+    [[MPMusicPlayerController applicationMusicPlayer] skipToNextItem];
+    [[MPMusicPlayerController applicationMusicPlayer] play];
+    return;
+}
 
 #pragma mark - 
 
@@ -153,12 +197,18 @@
     
 }
 
-- (void) playbackStateChanged: (id) notification 
+- (void) playbackStateChanged:(id)notification 
 {
     
 }
 
-
+- (void)iPodItemChanged:(id)notification
+{
+    MPMusicPlayerController *mpc = (MPMusicPlayerController *)[notification object];
+    SGIPodItem *item = [[SGIPodItem alloc] initWithiPodItem:[mpc nowPlayingItem]];
+    [self.currentPlaylist setCurrentItem:item];
+    self.currentItem = item;
+}
 
 @end
 
@@ -199,11 +249,25 @@
 
 - (id <SGMediaItem>)previousItem
 {
+    if ([[MPMusicPlayerController applicationMusicPlayer] playbackState] != MPMusicPlaybackStateStopped && 
+        [[MPMusicPlayerController applicationMusicPlayer] currentPlaybackTime] > 3.0)
+    {
+        [[MPMusicPlayerController applicationMusicPlayer] setCurrentPlaybackTime:0.0];
+        if ([[MPMusicPlayerController applicationMusicPlayer] playbackState] != MPMusicPlaybackStatePlaying)
+        {
+            [[MPMusicPlayerController applicationMusicPlayer] play];
+        }
+        return nil;
+    }
+    [[MPMusicPlayerController applicationMusicPlayer] skipToPreviousItem];
+    [[MPMusicPlayerController applicationMusicPlayer] play];
     return nil;
 }
 
 - (id <SGMediaItem>)nextItem
 {
+    [[MPMusicPlayerController applicationMusicPlayer] skipToNextItem];
+    [[MPMusicPlayerController applicationMusicPlayer] play];
     return nil;
 }
 
@@ -222,6 +286,9 @@
 
 - (id)initWithiPodItem:(MPMediaItem *)item
 {
+    if (item == nil)
+        return nil;
+    
     self = [super init];
     
     if (self == nil)

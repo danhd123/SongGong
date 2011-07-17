@@ -59,6 +59,8 @@
     wrap = NO;
     //Set up our sources
     carouselSourceViewControllers = [[NSArray alloc] initWithObjects: [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil],  [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], nil];
+    
+    currentCarouselSource = [[carouselSourceViewControllers objectAtIndex:0] source];
 }
 
 - (void)viewDidUnload
@@ -80,12 +82,15 @@
 {
     LOG_CALL;    
     [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
+    [currentCarouselSource playNextItem];
+    
 }
 
 - (void)prevItem:(id)sender
 {
     LOG_CALL;
     [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
+    [currentCarouselSource playPreviousItem];
 }
 
 - (void)nextPlaylist:(id)sender
@@ -119,7 +124,7 @@
 - (void)playPauseToggle:(id)sender
 {
     LOG_CALL;    
-    [currentCarouselSource.currentPlaylist.currentItem togglePlay:self];
+    [currentCarouselSource togglePlay:self];
     [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
 
 }
@@ -169,26 +174,35 @@
 
 - (void)carouselCurrentItemIndexUpdated:(iCarousel *)incarousel
 {
+    LOG_CALL;
     if (incarousel.currentItemIndex != currentCarouselItemIndex)
     {
         currentCarouselItemIndex = incarousel.currentItemIndex;
+        [currentCarouselSource stop:self];
+        
+        currentCarouselSource = [[carouselSourceViewControllers objectAtIndex:currentCarouselItemIndex] source];
+        [NSObject cancelPreviousPerformRequestsWithTarget:currentCarouselSource];
+        [(NSObject *)currentCarouselSource performSelector:@selector(play:) withObject:nil afterDelay:0.1];
     }
 }
 
 - (void)carouselWillBeginDragging:(iCarousel *)incarousel
 {
+    LOG_CALL;
     currentCarouselItemIndex = incarousel.currentItemIndex;
 }
 
 
 - (void)carouselDidEndDragging:(iCarousel *)carousel willDecelerate:(BOOL)decelerate
 {
+    LOG_CALL;
+
     [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
 }
 
 - (void)carouselDidScroll:(iCarousel *)carousel
 {
-    [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
+ //   LOG_CALL;
 }
 
 

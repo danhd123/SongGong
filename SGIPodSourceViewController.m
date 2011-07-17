@@ -71,7 +71,7 @@
 
 -(void)carouselWillBringViewToFront
 {
-    artworkOrIcon.image = iPodSource.currentPlaylist.currentItem.thumbnail;
+    artworkOrIcon.image = iPodSource.currentItem.thumbnail;
     [self.view setNeedsDisplayInRect:artworkOrIcon.bounds];
 }
 -(void)carouselWillSendViewToBack
