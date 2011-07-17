@@ -7,6 +7,7 @@
 //
 
 #import "SGIPodSource.h"
+#import <MediaPlayer/MediaPlayer.h>
 
 @implementation SGIPodSource
 @synthesize playlists, sourceName, currentPlaylist;
@@ -16,6 +17,7 @@
     self = [super init];
     if (self) {
         // Initialization code here.
+        self.sourceName = @"iPod";
     }
     
     return self;
@@ -61,7 +63,7 @@
 
 - (void)togglePlay:(id)sender
 {
-    
+    [[MPMusicPlayerController applicationMusicPlayer] play];
 }
 
 @end

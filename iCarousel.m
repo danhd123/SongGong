@@ -80,6 +80,7 @@
 - (void)transformItemView:(UIView *)view atIndex:(NSInteger)index;
 - (void)didScroll;
 
+NSInteger compareViewDepth(id obj1, id obj2, void *context);
 @end
 
 
