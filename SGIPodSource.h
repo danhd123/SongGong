@@ -32,6 +32,7 @@
 @class SGIPodItem, SGIPodPlaylist;
 @interface SGIPodItem : NSObject <SGMediaItem>
 - (void)togglePlay:(id)sender;
+@property (readwrite, retain) NSTimer *updateTimer;
 @property (readonly) UIImage *thumbnail;
 @property (readwrite, retain) NSString *title;
 @property (readwrite, retain) NSString *album;
@@ -43,7 +44,6 @@
 - (id <SGMediaItem>)previousItem;
 - (id <SGMediaItem>)nextItem;
 - (void)playItem:(id <SGMediaItem>)item;
-@property (readwrite, retain) NSTimer *updateTimer;
 @property (readwrite, retain) NSString *title;
 @property (readwrite, retain) id <SGMediaItem> currentItem;
 @property (readwrite, retain) NSArray *itemIds;
