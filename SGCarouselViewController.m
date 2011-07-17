@@ -15,6 +15,10 @@
 #import "SGRdioSourceViewController.h"
 #import "ExplodingTextViewController.h"
 
+@interface SGCarouselViewController ()
+- (void)playIfIdle:(id)obj;
+@end
+
 @implementation SGCarouselViewController
 @synthesize gestureController;
 
@@ -69,11 +73,12 @@
     currentCarouselSource = [[carouselSourceViewControllers objectAtIndex:0] source];
     [[carouselSourceViewControllers objectAtIndex:0] carouselDidBringViewToFront];
     
-    [self performSelector:@selector(playIfIdle:) withObject:nil afterDelay:4.0];
+//    [self performSelector:@selector(playIfIdle:) withObject:nil afterDelay:4.0];
 }
 
 - (void)playIfIdle:(id)obj
 {
+    LOG_CALL;
     if ([currentCarouselSource currentItem] == nil)
     {
         [currentCarouselSource togglePlay:self];
