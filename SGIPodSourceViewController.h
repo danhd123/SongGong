@@ -11,7 +11,7 @@
 
 @class SGIPodSource;
 
-@interface SGIPodSourceViewController : UIViewController <SGCarouselItem>
+@interface SGIPodSourceViewController : UIViewController <SGCarouselItemViewController>
 {
     SGIPodSource *iPodSource;
 }

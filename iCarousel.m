@@ -148,6 +148,7 @@ NSInteger compareViewDepth(id obj1, id obj2, void *context);
 	centerItemWhenSelected = YES;
 	
     UIPanGestureRecognizer *panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(didPan:)];
+    panGesture.minimumNumberOfTouches = 2;
 	panGesture.delegate = self;
     [contentView addGestureRecognizer:panGesture];
     [panGesture release];

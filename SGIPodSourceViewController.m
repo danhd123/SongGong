@@ -10,7 +10,7 @@
 #import "SGIPodSource.h"
 
 @implementation SGIPodSourceViewController
-@synthesize playlists, sourceName, currentPlaylist;
+@synthesize playlists, sourceName, currentPlaylist, source = iPodSource;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -21,6 +21,12 @@
         // Custom initialization
     }
     return self;
+}
+
+- (void)dealloc
+{
+    [iPodSource release];
+    [super dealloc];
 }
 
 - (void)didReceiveMemoryWarning

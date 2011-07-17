@@ -8,18 +8,21 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol SGMediaItem, SGMediaPlaylist;
+@protocol SGMediaItem, SGMediaPlaylist, SGCarouselItem;
+
+@protocol SGCarouselItemViewController <NSObject>
+@property (readwrite, retain) id <SGCarouselItem> source;
+@property (readonly, retain) UIView *carouselDisplayView;
+@end
 
 @protocol SGCarouselItem <NSObject>
 - (void)togglePlay:(id)sender;
 - (void)stop:(id)sender;
-
 - (id <SGMediaPlaylist>)previousPlaylist;
 - (id <SGMediaPlaylist>)nextPlaylist;
 @property (readwrite, retain) NSString *sourceName;
 @property (nonatomic, readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
 @property (readwrite, retain) NSArray *playlists;
-@property (readonly, retain) UIView *carouselDisplayView;
 
 @end
 

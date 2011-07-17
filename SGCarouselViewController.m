@@ -38,7 +38,7 @@
 - (void)dealloc
 {
     [self.gestureController release];
-    [carouselSources release];
+    [carouselSourceViewControllers release];
     [super dealloc];
 }
 
@@ -58,7 +58,7 @@
     carousel.contentOffset = CGSizeMake(0, -50);
     wrap = NO;
     //Set up our sources
-    carouselSources = [[NSArray alloc] initWithObjects: [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil],  [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], nil];
+    carouselSourceViewControllers = [[NSArray alloc] initWithObjects: [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil],  [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], nil];
 }
 
 - (void)viewDidUnload
@@ -149,12 +149,12 @@
 
 - (NSUInteger)numberOfItemsInCarousel:(iCarousel *)carousel
 {
-    return [carouselSources count];
+    return [carouselSourceViewControllers count];
 }
 
 - (UIView *)carousel:(iCarousel *)carousel viewForItemAtIndex:(NSUInteger)index
 {
-    return [[carouselSources objectAtIndex:index] carouselDisplayView];
+    return [[carouselSourceViewControllers objectAtIndex:index] carouselDisplayView];
 }
 
 #pragma mark iCarousel delegate
@@ -164,7 +164,32 @@
 }
 - (float)carouselItemWidth:(iCarousel *)aCarousel
 {
-    return [[[carouselSources objectAtIndex:aCarousel.currentItemIndex] carouselDisplayView] bounds].size.width*1.25; //because everything else is that big too
+    return [[[carouselSourceViewControllers objectAtIndex:aCarousel.currentItemIndex] carouselDisplayView] bounds].size.width*1.25; //because everything else is that big too
 }
+
+- (void)carouselCurrentItemIndexUpdated:(iCarousel *)incarousel
+{
+    if (incarousel.currentItemIndex != currentCarouselItemIndex)
+    {
+        currentCarouselItemIndex = incarousel.currentItemIndex;
+    }
+}
+
+- (void)carouselWillBeginDragging:(iCarousel *)incarousel
+{
+    currentCarouselItemIndex = incarousel.currentItemIndex;
+}
+
+
+- (void)carouselDidEndDragging:(iCarousel *)carousel willDecelerate:(BOOL)decelerate
+{
+    [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
+}
+
+- (void)carouselDidScroll:(iCarousel *)carousel
+{
+    [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
+}
+
 
 @end

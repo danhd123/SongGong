@@ -11,15 +11,16 @@
 #import "SGCarouselProtocols.h"
 
 @class SGGestureController;
-@protocol SGGestureControllerDelegate;
+@protocol SGGestureControllerDelegate, SGCarouselItemViewController;
 @class iCarousel;
 
 
 @interface SGCarouselViewController : UIViewController <SGGestureControllerDelegate>
 {
     id <SGCarouselItem> currentCarouselSource;
-    NSArray *carouselSources;
+    NSArray *carouselSourceViewControllers; //SGCarouselItemViewController
     iCarousel *carousel;
+    NSInteger currentCarouselItemIndex;
     BOOL wrap;
 }
 @property (nonatomic, retain) SGGestureController *gestureController;
