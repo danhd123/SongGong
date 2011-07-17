@@ -79,10 +79,9 @@
     [[MPMusicPlayerController applicationMusicPlayer] stop];
     if (self.currentPlaylist == nil)
     {
-//        if (self.playlists.count > 0)
-//        {
-//            self.currentPlaylist = [self.playlists objectAtIndex:0];
-//        }
+        MPMediaQuery *query = [MPMediaQuery songsQuery];
+        [[MPMusicPlayerController applicationMusicPlayer] setQueueWithQuery:query];
+                                         
     }
     
     [[MPMusicPlayerController applicationMusicPlayer] play];
@@ -95,16 +94,19 @@
 
 - (void)setCurrentPlaylist:(id<SGMediaPlaylist>)playlist
 {
+    [self willChangeValueForKey:@"currentPlaylist"];
     if (playlist != nil)
     {
-        
         NSString *pid = [(SGIPodPlaylist *)playlist persistentId];
         MPMediaQuery *query = [MPMediaQuery songsQuery];
         MPMediaPropertyPredicate *mpp = [MPMediaPropertyPredicate predicateWithValue:pid forProperty:MPMediaPlaylistPropertyPersistentID comparisonType:MPMediaPredicateComparisonEqualTo];
         [query addFilterPredicate:mpp];
-        
         [[MPMusicPlayerController applicationMusicPlayer] setQueueWithQuery:query];
     }
+    id tmp = [playlist retain];
+    [currentPlaylist release];
+    currentPlaylist = tmp;
+    [self didChangeValueForKey:@"currentPlaylist"];
 }
 
 - (void)togglePlay:(id)sender
@@ -137,12 +139,13 @@
 
 - (void)playNextPlaylist
 {
-    id <SGMediaPlaylist>next = [self nextPlaylist];
-    if (!next)
+    id <SGMediaPlaylist>nextPlaylist = [self nextPlaylist];
+    if (!nextPlaylist)
         return;
     
-    [delegate playlistWillChange:next.title direction:0];
-    self.currentPlaylist = next;
+    [delegate playlistWillChange:nextPlaylist.title direction:0];
+    self.currentPlaylist = nextPlaylist;
+    NSLog(@"%@ vs: %@", self.currentPlaylist, nextPlaylist);
     [self willChangeValueForKey:@"currentItem"];
     [self play:nil];
     [self didChangeValueForKey:@"currentItem"];
