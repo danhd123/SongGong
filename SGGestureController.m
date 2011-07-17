@@ -11,6 +11,8 @@
 @interface SGGestureController (Private)
 - (void)handleTapFrom:(UITapGestureRecognizer *)recognizer;
 
+- (void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer;
+
 - (void)handleSwipeLeftFrom:(UISwipeGestureRecognizer *)recognizer;
 - (void)handleSwipeRightFrom:(UISwipeGestureRecognizer *)recognizer;
 - (void)handleSwipeUpFrom:(UISwipeGestureRecognizer *)recognizer;
@@ -47,6 +49,7 @@
 
         //1 finger swipe left
         UISwipeGestureRecognizer *swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftFrom:)];
+        swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
         swipeRecognizer.delegate = self;
         [self.delegate.view addGestureRecognizer:swipeRecognizer];
         [gestureRecognizers addObject:swipeRecognizer];
@@ -54,6 +57,7 @@
         
         //2 finger swipe left
         swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeLeftFrom:)];
+        swipeRecognizer.direction = UISwipeGestureRecognizerDirectionLeft;
         swipeRecognizer.numberOfTouchesRequired = 2;
         swipeRecognizer.delegate = self;
         [self.delegate.view addGestureRecognizer:swipeRecognizer];
@@ -62,6 +66,7 @@
         
         //1 finger swipe right
         swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightFrom:)];
+        swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
         swipeRecognizer.numberOfTouchesRequired = 1;
         swipeRecognizer.delegate = self;
         [self.delegate.view addGestureRecognizer:swipeRecognizer];
@@ -70,6 +75,7 @@
         
         //2 finger swipe right
         swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeRightFrom:)];
+        swipeRecognizer.direction = UISwipeGestureRecognizerDirectionRight;
         swipeRecognizer.numberOfTouchesRequired = 2;
         swipeRecognizer.delegate = self;
         [self.delegate.view addGestureRecognizer:swipeRecognizer];
@@ -78,6 +84,7 @@
 
         //1 finger swipe up
         swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
+        swipeRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
         swipeRecognizer.numberOfTouchesRequired = 1;
         swipeRecognizer.delegate = self;
         [self.delegate.view addGestureRecognizer:swipeRecognizer];
@@ -86,6 +93,7 @@
         
         //2 finger swipe up
         swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeUpFrom:)];
+        swipeRecognizer.direction = UISwipeGestureRecognizerDirectionUp;
         swipeRecognizer.numberOfTouchesRequired = 2;
         swipeRecognizer.delegate = self;
         [self.delegate.view addGestureRecognizer:swipeRecognizer];
@@ -94,6 +102,7 @@
         
         //1 finger swipe down
         swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownFrom:)];
+        swipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
         swipeRecognizer.numberOfTouchesRequired = 1;
         swipeRecognizer.delegate = self;
         [self.delegate.view addGestureRecognizer:swipeRecognizer];
@@ -102,6 +111,7 @@
         
         //2 finger swipe down
         swipeRecognizer = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeDownFrom:)];
+        swipeRecognizer.direction = UISwipeGestureRecognizerDirectionDown;
         swipeRecognizer.numberOfTouchesRequired = 2;
         swipeRecognizer.delegate = self;
         [self.delegate.view addGestureRecognizer:swipeRecognizer];
@@ -144,6 +154,28 @@
     }
 }
 
+- (void)handleSwipeFrom:(UISwipeGestureRecognizer *)recognizer
+{
+    switch (recognizer.direction) {
+        case UISwipeGestureRecognizerDirectionUp:
+            [self handleSwipeUpFrom:recognizer];
+            break;
+        case UISwipeGestureRecognizerDirectionDown:
+            [self handleSwipeDownFrom:recognizer];
+            break;
+        case UISwipeGestureRecognizerDirectionLeft:
+            [self handleSwipeLeftFrom:recognizer];
+            break;
+        case UISwipeGestureRecognizerDirectionRight:
+            [self handleSwipeRightFrom:recognizer];
+            break;
+            
+        default:
+            break;
+    }
+}
+
+
 - (void)handleSwipeLeftFrom:(UISwipeGestureRecognizer *)recognizer
 {
     LOG_CALL;
@@ -182,10 +214,10 @@
     switch (recognizer.numberOfTouches)
     {
         case 1:
-            [delegate prevPlaylist:self];
+            //Nothing for 1 finger swipe up yet
             break;
         case 2:
-            //Nothing for 2 finger swipe down yet
+            [delegate prevPlaylist:self];
             break;
         default:
             break;
@@ -198,10 +230,10 @@
     switch (recognizer.numberOfTouches)
     {
         case 1:
-            [delegate prevItem:self];
+            //Nothing for 1 finger swipe down yet
             break;
         case 2:
-            //Nothing for 2 finger swipe up yet
+            [delegate nextPlaylist:self];
             break;
         default:
             break;
