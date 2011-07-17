@@ -58,7 +58,7 @@
     carousel.perspective = -.002;
     carousel.viewpointOffset = CGSizeMake(0, -50);
     carousel.contentOffset = CGSizeMake(0, -50);
-    wrap = NO;
+    wrap = YES;
     //Set up our sources
     carouselSourceViewControllers = [[NSArray alloc] initWithObjects: [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGRdioSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil],  [[SGIPodSourceViewController alloc] initWithNibName:@"SGIPodSourceViewController" bundle:nil], nil];
     for (id vc in carouselSourceViewControllers)
