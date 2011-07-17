@@ -99,14 +99,14 @@
 {
     LOG_CALL;
     [OPASpookSoundManager playShortSound:@"nav-UpDown.aiff" disposeWhenDone:NO]; 
-    [currentCarouselSource nextPlaylist];
+    [currentCarouselSource playNextPlaylist];
 }
 
 - (void)prevPlaylist:(id)sender
 {
     LOG_CALL;    
     [OPASpookSoundManager playShortSound:@"nav-UpDown.aiff" disposeWhenDone:NO];
-    [currentCarouselSource previousPlaylist];
+    [currentCarouselSource playPreviousPlaylist];
 }
 
 //Not used - carousel does this with 2 fingers

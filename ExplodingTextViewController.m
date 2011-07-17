@@ -9,8 +9,14 @@
 #import "ExplodingTextViewController.h"
 #import "SongGongAppDelegate.h"
 
+@interface ExplodingTextViewController ()
+- (void)explodingDone:(NSString *)animationId finished:(BOOL)finished context:(id)context;
+@end
+
 @implementation ExplodingTextViewController
 @synthesize textLabel;
+
+#define EXPLOSIONSIZE 10.0
 
 + (id)explodeText:(NSString *)text
 {
@@ -60,6 +66,8 @@
     if (!self.view.superview)
     {
         [[SongGongAppDelegate mainView] addSubview:self.view];
+        
+        self.view.center = [SongGongAppDelegate mainView].center;
     }
     
     [self retain];
@@ -68,21 +76,39 @@
     self.textLabel.text = text;
     [self.view setHidden:NO];
 
-    [UIView beginAnimations:NSStringFromSelector(_cmd) context:nil];
+    [UIView beginAnimations:@"1" context:nil];
 
-    [UIView setAnimationDidStopSelector:@selector(animatePlaylistViewPart2:finished:context:)]; 
-    [UIView setAnimationCurve:UIViewAnimationCurveLinear]; 
-    [UIView setAnimationDuration:.25]; 
+    self.view.alpha = 1.0;
+    [UIView setAnimationDidStopSelector:@selector(explodingDone:finished:context:)]; 
+    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn]; 
+    self.view.alpha = 0.5;
+    [UIView setAnimationDuration:.20];
     [UIView setAnimationDelegate:self];
-    CGAffineTransform transform = CGAffineTransformMakeScale(5.0,5.0);    
+    CGAffineTransform transform = CGAffineTransformMakeScale(2.0,2.0);    
+    self.view.center = [self.view superview].center;
     self.view.transform = transform;
     [UIView commitAnimations];
 }
 
 - (void)explodingDone:(NSString *)animationId finished:(BOOL)finished context:(id)context
 {
-    [self.view removeFromSuperview];
-    [self release];
+    if ([animationId isEqualToString:@"2"])
+    {
+        [self.view removeFromSuperview];
+        [self release];
+    } else {
+        [UIView beginAnimations:@"2" context:nil];
+        
+        self.view.alpha = 0.5;
+        [UIView setAnimationDidStopSelector:@selector(explodingDone:finished:context:)]; 
+        [UIView setAnimationCurve:UIViewAnimationCurveEaseIn]; 
+        self.view.alpha = 0.0;
+        [UIView setAnimationDelegate:self];
+        CGAffineTransform transform = CGAffineTransformMakeScale(EXPLOSIONSIZE,EXPLOSIONSIZE);    
+        self.view.transform = transform;
+        self.view.center = [self.view superview].center;
+        [UIView commitAnimations];
+    }
 }
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {

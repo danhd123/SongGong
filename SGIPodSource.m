@@ -9,6 +9,7 @@
 #import "SGIPodSource.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import <CoreGraphics/CoreGraphics.h>
+#import "ExplodingTextViewController.h"
 
 #define PREFERRED_ARTWORK_SIZE 256.0
 

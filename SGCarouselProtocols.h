@@ -28,6 +28,9 @@
 - (void)playNextItem;
 - (void)playPreviousItem;
 
+- (void)playPreviousPlaylist;
+- (void)playNextPlaylist;
+
 - (id <SGMediaPlaylist>)previousPlaylist;
 - (id <SGMediaPlaylist>)nextPlaylist;
 @property (readwrite, retain) id <SGMediaItem> currentItem;

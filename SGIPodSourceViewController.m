@@ -10,6 +10,7 @@
 #import "SGGenericPlayerView.h"
 #import "SGIPodSource.h"
 #import "SGCarouselProtocols.h"
+#import "ExplodingTextViewController.h"
 
 @interface SGIPodSourceViewController ()
 - (void)updateUIForItem:(id<SGMediaItem>)item;
@@ -188,6 +189,7 @@
 {
     if (!newPlaylistName)
         newPlaylistName = @"Library";
+    [ExplodingTextViewController explodeText:newPlaylistName];
     [self animatePlaylistView:(direction == 0) newName:newPlaylistName];
 }
 
