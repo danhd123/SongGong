@@ -97,7 +97,10 @@
     {
         [self popGenericPlayer];
     } else {
-        artworkOrIcon.image = item.thumbnail;
+        if (item.thumbnail != nil)
+            artworkOrIcon.image = item.thumbnail;
+        else
+            artworkOrIcon.image = [UIImage imageNamed:@"BlankAudio"];
         titleLabel.text = item.title;
         artistLabel.text = item.artist;
         playlistNameLabel.text = iPodSource.currentPlaylist.title;
@@ -224,7 +227,7 @@
     [self updateUIForItem:media];
     if (media)
     {
-    
+        
     } else {
 
     }

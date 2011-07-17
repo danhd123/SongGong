@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A73D786013D38FED00837A2F /* BlankAudio.png in Resources */ = {isa = PBXBuildFile; fileRef = A73D785F13D38FED00837A2F /* BlankAudio.png */; };
 		A7462B6E13D36CF300C5CEB5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B6D13D36CF300C5CEB5 /* icon.png */; };
 		A7462B9F13D3779600C5CEB5 /* mainicons_1.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B9513D3779600C5CEB5 /* mainicons_1.png */; };
 		A7462BA013D3779600C5CEB5 /* mainicons_2.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B9613D3779600C5CEB5 /* mainicons_2.png */; };
@@ -60,6 +61,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A73D785F13D38FED00837A2F /* BlankAudio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BlankAudio.png; path = Resources/BlankAudio.png; sourceTree = SOURCE_ROOT; };
 		A7462B6D13D36CF300C5CEB5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = SOURCE_ROOT; };
 		A7462B9513D3779600C5CEB5 /* mainicons_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainicons_1.png; path = "Resources/carousel icons/mainicons_1.png"; sourceTree = SOURCE_ROOT; };
 		A7462B9613D3779600C5CEB5 /* mainicons_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mainicons_2.png; path = "Resources/carousel icons/mainicons_2.png"; sourceTree = SOURCE_ROOT; };
@@ -194,6 +196,7 @@
 		A7B38D2D13D261590067C53D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				A73D785F13D38FED00837A2F /* BlankAudio.png */,
 				A7462B9413D3778000C5CEB5 /* Carousel Icons */,
 				BC8F929513D3736A00824DB6 /* icon57.png */,
 				BC8F929613D3736A00824DB6 /* icon114.png */,
@@ -384,6 +387,7 @@
 				A7462BA813D3779600C5CEB5 /* mainicons_r_5.png in Resources */,
 				A7462BAD13D37B7D00C5CEB5 /* ExplodingTextViewController.xib in Resources */,
 				BCC1BFC713D38876004C0EE2 /* SGRdioSourceViewController.xib in Resources */,
+				A73D786013D38FED00837A2F /* BlankAudio.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
