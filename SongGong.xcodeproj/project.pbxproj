@@ -7,10 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A7B38D3113D2616A0067C53D /* nav-LeftRight.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7B38D2E13D2616A0067C53D /* nav-LeftRight.aiff */; };
+		A7B38D3213D2616A0067C53D /* nav-UpDown.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7B38D2F13D2616A0067C53D /* nav-UpDown.aiff */; };
+		A7B38D3313D2616A0067C53D /* nav-Wall.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7B38D3013D2616A0067C53D /* nav-Wall.aiff */; };
+		A7B38D3C13D2623C0067C53D /* OPAAudioPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B38D3913D2623C0067C53D /* OPAAudioPlayer.m */; };
+		A7B38D3D13D2623C0067C53D /* OPAAudioQueueObject.m in Sources */ = {isa = PBXBuildFile; fileRef = A7B38D3B13D2623C0067C53D /* OPAAudioQueueObject.m */; };
 		A7C4193313D2545C00C12455 /* SGBlindGestureView.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C4192D13D2545C00C12455 /* SGBlindGestureView.m */; };
 		A7C4193413D2545C00C12455 /* SGCarouselViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C4192F13D2545C00C12455 /* SGCarouselViewController.m */; };
 		A7C4193513D2545C00C12455 /* SGCarouselViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7C4193013D2545C00C12455 /* SGCarouselViewController.xib */; };
 		A7C4193613D2545C00C12455 /* SGGestureController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7C4193213D2545C00C12455 /* SGGestureController.m */; };
+		A7D636D813D2662500E6F541 /* OPASpookSoundManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A7D636D713D2662500E6F541 /* OPASpookSoundManager.m */; };
 		A7E0002713D15A3D0048B9EC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002613D15A3D0048B9EC /* UIKit.framework */; };
 		A7E0002913D15A3D0048B9EC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002813D15A3D0048B9EC /* Foundation.framework */; };
 		A7E0002B13D15A3D0048B9EC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A7E0002A13D15A3D0048B9EC /* CoreGraphics.framework */; };
@@ -23,6 +29,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A7B38D2E13D2616A0067C53D /* nav-LeftRight.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = "nav-LeftRight.aiff"; path = "Resources/navSounds/nav-LeftRight.aiff"; sourceTree = SOURCE_ROOT; };
+		A7B38D2F13D2616A0067C53D /* nav-UpDown.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = "nav-UpDown.aiff"; path = "Resources/navSounds/nav-UpDown.aiff"; sourceTree = SOURCE_ROOT; };
+		A7B38D3013D2616A0067C53D /* nav-Wall.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = "nav-Wall.aiff"; path = "Resources/navSounds/nav-Wall.aiff"; sourceTree = SOURCE_ROOT; };
+		A7B38D3813D2623C0067C53D /* OPAAudioPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPAAudioPlayer.h; sourceTree = "<group>"; };
+		A7B38D3913D2623C0067C53D /* OPAAudioPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPAAudioPlayer.m; sourceTree = "<group>"; };
+		A7B38D3A13D2623C0067C53D /* OPAAudioQueueObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPAAudioQueueObject.h; sourceTree = "<group>"; };
+		A7B38D3B13D2623C0067C53D /* OPAAudioQueueObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPAAudioQueueObject.m; sourceTree = "<group>"; };
 		A7C4192C13D2545C00C12455 /* SGBlindGestureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGBlindGestureView.h; sourceTree = SOURCE_ROOT; };
 		A7C4192D13D2545C00C12455 /* SGBlindGestureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGBlindGestureView.m; sourceTree = SOURCE_ROOT; };
 		A7C4192E13D2545C00C12455 /* SGCarouselViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGCarouselViewController.h; sourceTree = SOURCE_ROOT; };
@@ -30,6 +43,8 @@
 		A7C4193013D2545C00C12455 /* SGCarouselViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGCarouselViewController.xib; sourceTree = SOURCE_ROOT; };
 		A7C4193113D2545C00C12455 /* SGGestureController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGGestureController.h; sourceTree = SOURCE_ROOT; };
 		A7C4193213D2545C00C12455 /* SGGestureController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGGestureController.m; sourceTree = SOURCE_ROOT; };
+		A7D636D613D2662500E6F541 /* OPASpookSoundManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OPASpookSoundManager.h; sourceTree = SOURCE_ROOT; };
+		A7D636D713D2662500E6F541 /* OPASpookSoundManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OPASpookSoundManager.m; sourceTree = SOURCE_ROOT; };
 		A7E0002213D15A3D0048B9EC /* SongGong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SongGong.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E0002613D15A3D0048B9EC /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A7E0002813D15A3D0048B9EC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -63,6 +78,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A7B38D2C13D2614F0067C53D /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				A7B38D2E13D2616A0067C53D /* nav-LeftRight.aiff */,
+				A7B38D2F13D2616A0067C53D /* nav-UpDown.aiff */,
+				A7B38D3013D2616A0067C53D /* nav-Wall.aiff */,
+			);
+			name = Sounds;
+			sourceTree = "<group>";
+		};
+		A7B38D2D13D261590067C53D /* Images */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		A7B38D3713D2623C0067C53D /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				A7D636D613D2662500E6F541 /* OPASpookSoundManager.h */,
+				A7D636D713D2662500E6F541 /* OPASpookSoundManager.m */,
+				A7B38D3813D2623C0067C53D /* OPAAudioPlayer.h */,
+				A7B38D3913D2623C0067C53D /* OPAAudioPlayer.m */,
+				A7B38D3A13D2623C0067C53D /* OPAAudioQueueObject.h */,
+				A7B38D3B13D2623C0067C53D /* OPAAudioQueueObject.m */,
+			);
+			path = AudioPlayer;
+			sourceTree = SOURCE_ROOT;
+		};
 		A7E0001713D15A3D0048B9EC = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +141,9 @@
 		A7E0002C13D15A3D0048B9EC /* SongGong */ = {
 			isa = PBXGroup;
 			children = (
+				A7B38D3713D2623C0067C53D /* AudioPlayer */,
+				A7B38D2D13D261590067C53D /* Images */,
+				A7B38D2C13D2614F0067C53D /* Sounds */,
 				A7C4192C13D2545C00C12455 /* SGBlindGestureView.h */,
 				A7C4192D13D2545C00C12455 /* SGBlindGestureView.m */,
 				A7C4192E13D2545C00C12455 /* SGCarouselViewController.h */,
@@ -175,6 +223,9 @@
 			files = (
 				A7EA405A13D1656D008D9551 /* InfoPlist.strings in Resources */,
 				A7C4193513D2545C00C12455 /* SGCarouselViewController.xib in Resources */,
+				A7B38D3113D2616A0067C53D /* nav-LeftRight.aiff in Resources */,
+				A7B38D3213D2616A0067C53D /* nav-UpDown.aiff in Resources */,
+				A7B38D3313D2616A0067C53D /* nav-Wall.aiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -190,6 +241,9 @@
 				A7C4193313D2545C00C12455 /* SGBlindGestureView.m in Sources */,
 				A7C4193413D2545C00C12455 /* SGCarouselViewController.m in Sources */,
 				A7C4193613D2545C00C12455 /* SGGestureController.m in Sources */,
+				A7B38D3C13D2623C0067C53D /* OPAAudioPlayer.m in Sources */,
+				A7B38D3D13D2623C0067C53D /* OPAAudioQueueObject.m in Sources */,
+				A7D636D813D2662500E6F541 /* OPASpookSoundManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

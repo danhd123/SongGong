@@ -24,8 +24,8 @@
 - (void)nextItem:(id)sender;   //swipe right
 - (void)prevItem:(id)sender;   //swipe left
 
-- (void)nextPlaylist:(id)sender;   //swipe down
-- (void)prevPlaylist:(id)sender;   //swipe up
+- (void)nextPlaylist:(id)sender;   //2 finger swipe down
+- (void)prevPlaylist:(id)sender;   //2 finger swipe up
 
 - (void)nextSource:(id)sender; //2 finger swipe right
 - (void)prevSource:(id)sender; //2 finger swipe left

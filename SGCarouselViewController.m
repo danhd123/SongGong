@@ -9,6 +9,7 @@
 #import "SGCarouselViewController.h"
 #import "SGCarouselProtocols.h"
 #import "SGGestureController.h"
+#import "OPASpookSoundManager.h"
 
 @implementation SGCarouselViewController
 @synthesize gestureController;
@@ -71,32 +72,35 @@
 
 - (void)prevItem:(id)sender
 {
-    LOG_CALL;    
+    LOG_CALL;
+    [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
 }
 
 - (void)nextPlaylist:(id)sender
 {
     LOG_CALL;    
+    [OPASpookSoundManager playShortSound:@"nav-UpDown.aiff" disposeWhenDone:NO];
    
 }
 
 - (void)prevPlaylist:(id)sender
 {
     LOG_CALL;    
+    [OPASpookSoundManager playShortSound:@"nav-UpDown.aiff" disposeWhenDone:NO];
 
 }
 
 
 - (void)nextSource:(id)sender
 {
-    LOG_CALL;    
+    LOG_CALL;
 
 }
 
 - (void)prevSource:(id)sender
 {
     LOG_CALL;    
-
+    [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
 }
 
 
@@ -104,6 +108,7 @@
 {
     LOG_CALL;    
     [currentCarouselSource.currentPlaylist.currentItem togglePlay:self];
+    [OPASpookSoundManager playShortSound:@"nav-LeftRight.aiff" disposeWhenDone:NO];
 
 }
 
@@ -111,12 +116,13 @@
 - (void)showNavigator:(id)sender
 {
     LOG_CALL;    
-
+    [OPASpookSoundManager playShortSound:@"nav-Wall.aiff" disposeWhenDone:NO];
 }
 
 - (void)showDetail:(id)sender
 {
     LOG_CALL;    
+    [OPASpookSoundManager playShortSound:@"nav-Wall.aiff" disposeWhenDone:NO];
 
 }
 
@@ -124,6 +130,7 @@
 - (void)showSpecialAction:(id)sender
 {
     LOG_CALL;    
+    [OPASpookSoundManager playShortSound:@"nav-Wall.aiff" disposeWhenDone:NO];
 
 }
 
