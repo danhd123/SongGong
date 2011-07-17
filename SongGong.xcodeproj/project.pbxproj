@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		A7462B6E13D36CF300C5CEB5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B6D13D36CF300C5CEB5 /* icon.png */; };
-		A7462B7013D36D8700C5CEB5 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B6F13D36D8700C5CEB5 /* icon57.png */; };
-		A7462B7213D36D9F00C5CEB5 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B7113D36D9F00C5CEB5 /* icon114.png */; };
 		A763031C13D2754C00F7682D /* SGIPodSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A763031B13D2754C00F7682D /* SGIPodSource.m */; };
 		A7B38D3113D2616A0067C53D /* nav-LeftRight.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7B38D2E13D2616A0067C53D /* nav-LeftRight.aiff */; };
 		A7B38D3213D2616A0067C53D /* nav-UpDown.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7B38D2F13D2616A0067C53D /* nav-UpDown.aiff */; };
@@ -33,6 +31,8 @@
 		BC6D345913D25A3E006DA25F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC6D345813D25A3E006DA25F /* QuartzCore.framework */; };
 		BC81E5EF13D295D1006A1E67 /* SGIPodSourceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BC81E5ED13D295D1006A1E67 /* SGIPodSourceViewController.m */; };
 		BC81E5F013D295D1006A1E67 /* SGIPodSourceViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BC81E5EE13D295D1006A1E67 /* SGIPodSourceViewController.xib */; };
+		BC8F929713D3736A00824DB6 /* icon57.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8F929513D3736A00824DB6 /* icon57.png */; };
+		BC8F929813D3736A00824DB6 /* icon114.png in Resources */ = {isa = PBXBuildFile; fileRef = BC8F929613D3736A00824DB6 /* icon114.png */; };
 		BCA82C6413D36ADD00679629 /* gray_bar_gradient.png in Resources */ = {isa = PBXBuildFile; fileRef = BCA82C6313D36ADD00679629 /* gray_bar_gradient.png */; };
 		BCBA88A813D271A400639D2C /* ipod-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BCBA88A713D271A400639D2C /* ipod-icon.png */; };
 		BCD1DECA13D2D67E000603F0 /* NSAttributedString+Attributes.m in Sources */ = {isa = PBXBuildFile; fileRef = BCD1DEC713D2D67E000603F0 /* NSAttributedString+Attributes.m */; };
@@ -45,8 +45,6 @@
 
 /* Begin PBXFileReference section */
 		A7462B6D13D36CF300C5CEB5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = Resources/icon.png; sourceTree = SOURCE_ROOT; };
-		A7462B6F13D36D8700C5CEB5 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = "<group>"; };
-		A7462B7113D36D9F00C5CEB5 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = "<group>"; };
 		A763031A13D2754C00F7682D /* SGIPodSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGIPodSource.h; sourceTree = SOURCE_ROOT; };
 		A763031B13D2754C00F7682D /* SGIPodSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGIPodSource.m; sourceTree = SOURCE_ROOT; };
 		A7B38D2E13D2616A0067C53D /* nav-LeftRight.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = "nav-LeftRight.aiff"; path = "Resources/navSounds/nav-LeftRight.aiff"; sourceTree = SOURCE_ROOT; };
@@ -84,6 +82,8 @@
 		BC81E5EC13D295D1006A1E67 /* SGIPodSourceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGIPodSourceViewController.h; sourceTree = SOURCE_ROOT; };
 		BC81E5ED13D295D1006A1E67 /* SGIPodSourceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGIPodSourceViewController.m; sourceTree = SOURCE_ROOT; };
 		BC81E5EE13D295D1006A1E67 /* SGIPodSourceViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SGIPodSourceViewController.xib; sourceTree = SOURCE_ROOT; };
+		BC8F929513D3736A00824DB6 /* icon57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon57.png; sourceTree = SOURCE_ROOT; };
+		BC8F929613D3736A00824DB6 /* icon114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon114.png; sourceTree = SOURCE_ROOT; };
 		BCA82C6313D36ADD00679629 /* gray_bar_gradient.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = gray_bar_gradient.png; sourceTree = SOURCE_ROOT; };
 		BCBA88A713D271A400639D2C /* ipod-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ipod-icon.png"; path = "Resources/ipod-icon.png"; sourceTree = SOURCE_ROOT; };
 		BCD1DEC613D2D67E000603F0 /* NSAttributedString+Attributes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+Attributes.h"; sourceTree = SOURCE_ROOT; };
@@ -141,6 +141,8 @@
 		A7B38D2D13D261590067C53D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				BC8F929513D3736A00824DB6 /* icon57.png */,
+				BC8F929613D3736A00824DB6 /* icon114.png */,
 				A7462B6D13D36CF300C5CEB5 /* icon.png */,
 				BCA82C6313D36ADD00679629 /* gray_bar_gradient.png */,
 				BCBA88A713D271A400639D2C /* ipod-icon.png */,
@@ -164,9 +166,6 @@
 		A7E0001713D15A3D0048B9EC = {
 			isa = PBXGroup;
 			children = (
-				A7462B7113D36D9F00C5CEB5 /* icon114.png */,
-				A7462B6F13D36D8700C5CEB5 /* icon57.png */,
-				BCD1DECC13D2D714000603F0 /* CoreText.framework */,
 				A7E0002C13D15A3D0048B9EC /* SongGong */,
 				A7E0002513D15A3D0048B9EC /* Frameworks */,
 				A7E0002313D15A3D0048B9EC /* Products */,
@@ -184,6 +183,7 @@
 		A7E0002513D15A3D0048B9EC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BCD1DECC13D2D714000603F0 /* CoreText.framework */,
 				BC6D345813D25A3E006DA25F /* QuartzCore.framework */,
 				BCEDBD9513D2431400BEA8FA /* MediaPlayer.framework */,
 				BCEDBD9113D23BCE00BEA8FA /* AudioToolbox.framework */,
@@ -298,8 +298,8 @@
 				BC2128A313D2B8250087CE59 /* SGGenericPlayerView.xib in Resources */,
 				BCA82C6413D36ADD00679629 /* gray_bar_gradient.png in Resources */,
 				A7462B6E13D36CF300C5CEB5 /* icon.png in Resources */,
-				A7462B7013D36D8700C5CEB5 /* icon57.png in Resources */,
-				A7462B7213D36D9F00C5CEB5 /* icon114.png in Resources */,
+				BC8F929713D3736A00824DB6 /* icon57.png in Resources */,
+				BC8F929813D3736A00824DB6 /* icon114.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

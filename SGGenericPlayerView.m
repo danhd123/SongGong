@@ -53,6 +53,7 @@
     attributedLabel.attributedText = mas;
     songProgress.progress = playItem.progress;
     artworkView.image = playItem.thumbnail;
+    [self.view setNeedsDisplay];
 }
 - (void)didReceiveMemoryWarning
 {
