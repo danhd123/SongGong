@@ -6,10 +6,10 @@
 //  Copyright 2011 doubleTwist Corporation. All rights reserved.
 //
 
-#import "DummySource.h"
+#import "SGDummySource.h"
 
-@implementation DummySource
-
+@implementation SGDummySource
+@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor, delegate;
 - (id)init
 {
     self = [super init];
@@ -20,4 +20,38 @@
     return self;
 }
 
+- (void)play:(id)sender
+{
+    
+}
+
+- (void)togglePlay:(id)sender
+{
+    
+}
+
+
+- (void)stop:(id)sender
+{
+    
+}
+
+
+
+- (id <SGMediaPlaylist>)previousPlaylist
+{
+    return nil;
+}
+
+
+- (id <SGMediaPlaylist>)nextPlaylist
+{
+    return nil;    
+}
+
+
+
 @end
+
+
+

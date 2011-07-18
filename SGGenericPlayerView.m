@@ -37,7 +37,7 @@
     if (aPlayItem != nil && progressTimer == nil)
     {
         self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgress:) userInfo:0 repeats:YES];
-    } else {
+    } else if (aPlayItem == nil) {
         [progressTimer invalidate];
         self.progressTimer  = nil;
 

@@ -10,7 +10,7 @@
 #import "SGCarouselProtocols.h"
 #import "SGIPodSource.h"
 
-@interface DummySource : NSObject
+@interface SGDummySource : NSObject <SGCarouselItem>
 
 - (void)play:(id)sender;
 - (void)togglePlay:(id)sender;
@@ -23,6 +23,7 @@
 @property (nonatomic, readwrite, retain) id <SGMediaPlaylist> currentPlaylist;
 @property (readwrite, retain) NSArray *playlists;
 @property (readwrite, assign) id<SGSourceDelegate> delegate;
+@property (readwrite, retain) UIColor *splashColor;
 @end
 
 
