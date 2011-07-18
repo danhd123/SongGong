@@ -77,18 +77,40 @@
     self.textLabel.text = text;
     [self.view setHidden:NO];
 
-    [UIView beginAnimations:@"1" context:nil];
+    [UIView animateWithDuration:0.2 animations:^{
+        self.view.alpha = 1.0;
+        self.view.alpha = 0.5;
+        CGAffineTransform transform = CGAffineTransformMakeScale(2.0,2.0);    
+        self.view.center = [self.view superview].center;
+        self.view.transform = transform;
+    }
+                     completion:^ (BOOL finished) {
+                         self.view.alpha = 0.5;
+                         [UIView animateWithDuration:0.3 animations:^{
+                             self.view.alpha = 0.0;
+                             CGAffineTransform transform = CGAffineTransformMakeScale(EXPLOSIONSIZE,EXPLOSIONSIZE);    
+                             self.view.transform = transform;
+                             self.view.center = [self.view superview].center;
+                         } completion:^(BOOL finished) {
+                             [self.view removeFromSuperview];
+                             [self release];
+                         }];
+      
+                     }];
 
-    self.view.alpha = 1.0;
-    [UIView setAnimationDidStopSelector:@selector(explodingDone:finished:context:)]; 
-    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn]; 
-    self.view.alpha = 0.5;
-    [UIView setAnimationDuration:.20];
-    [UIView setAnimationDelegate:self];
-    CGAffineTransform transform = CGAffineTransformMakeScale(2.0,2.0);    
-    self.view.center = [self.view superview].center;
-    self.view.transform = transform;
-    [UIView commitAnimations];
+
+//    [UIView beginAnimations:@"1" context:nil];
+//
+//    self.view.alpha = 1.0;
+//    [UIView setAnimationDidStopSelector:@selector(explodingDone:finished:context:)]; 
+//    [UIView setAnimationCurve:UIViewAnimationCurveEaseIn]; 
+//    self.view.alpha = 0.5;
+//    [UIView setAnimationDuration:.20];
+//    [UIView setAnimationDelegate:self];
+//    CGAffineTransform transform = CGAffineTransformMakeScale(2.0,2.0);    
+//    self.view.center = [self.view superview].center;
+//    self.view.transform = transform;
+//    [UIView commitAnimations];
 }
 
 - (void)explodingDone:(NSString *)animationId finished:(BOOL)finished context:(id)context
