@@ -25,19 +25,6 @@
 @property (readwrite, retain) NSArray *playlists;
 @property (readwrite, assign) id<SGSourceDelegate> delegate;
 
-@property (readwrite, retain) MPMusicPlayerController *player;
-@end
-
-
-@class SGIPodItem, SGIPodPlaylist;
-@interface SGIPodItem : NSObject <SGMediaItem>
-- (void)togglePlay:(id)sender;
-@property (readwrite, retain) NSTimer *updateTimer;
-@property (readonly) UIImage *thumbnail;
-@property (readwrite, retain) NSString *title;
-@property (readwrite, retain) NSString *album;
-@property (readwrite, retain) NSString *artist;
-@property (readwrite, retain) NSString *persistentId;
 @end
 
 @interface SGIPodPlaylist : NSObject <SGMediaPlaylist>
@@ -52,3 +39,15 @@
 
 
 
+@class SGIPodItem, SGIPodPlaylist;
+@interface SGIPodItem : NSObject <SGMediaItem>
+- (void)togglePlay:(id)sender;
+@property (readwrite, retain) MPMusicPlayerController *player;
+@property (readwrite, retain) NSTimer *updateTimer;
+@property (readonly) UIImage *thumbnail;
+@property (readwrite, retain) NSString *title;
+@property (readwrite, retain) NSString *album;
+@property (readwrite, retain) NSString *artist;
+@property (readwrite, retain) NSString *persistentId;
+- (void) playbackStateChanged:(id)notification;
+@end

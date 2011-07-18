@@ -22,7 +22,7 @@
 		A7462BA813D3779600C5CEB5 /* mainicons_r_5.png in Resources */ = {isa = PBXBuildFile; fileRef = A7462B9E13D3779600C5CEB5 /* mainicons_r_5.png */; };
 		A7462BAC13D37B7D00C5CEB5 /* ExplodingTextViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A7462BAA13D37B7D00C5CEB5 /* ExplodingTextViewController.m */; };
 		A7462BAD13D37B7D00C5CEB5 /* ExplodingTextViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7462BAB13D37B7D00C5CEB5 /* ExplodingTextViewController.xib */; };
-		A7462BB013D3841800C5CEB5 /* DummySource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7462BAF13D3841700C5CEB5 /* DummySource.m */; };
+		A7462BB013D3841800C5CEB5 /* SGDummySource.m in Sources */ = {isa = PBXBuildFile; fileRef = A7462BAF13D3841700C5CEB5 /* SGDummySource.m */; };
 		A763031C13D2754C00F7682D /* SGIPodSource.m in Sources */ = {isa = PBXBuildFile; fileRef = A763031B13D2754C00F7682D /* SGIPodSource.m */; };
 		A7B38D3113D2616A0067C53D /* nav-LeftRight.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7B38D2E13D2616A0067C53D /* nav-LeftRight.aiff */; };
 		A7B38D3213D2616A0067C53D /* nav-UpDown.aiff in Resources */ = {isa = PBXBuildFile; fileRef = A7B38D2F13D2616A0067C53D /* nav-UpDown.aiff */; };
@@ -79,8 +79,8 @@
 		A7462BA913D37B7D00C5CEB5 /* ExplodingTextViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExplodingTextViewController.h; sourceTree = "<group>"; };
 		A7462BAA13D37B7D00C5CEB5 /* ExplodingTextViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExplodingTextViewController.m; sourceTree = "<group>"; };
 		A7462BAB13D37B7D00C5CEB5 /* ExplodingTextViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExplodingTextViewController.xib; sourceTree = "<group>"; };
-		A7462BAE13D3841700C5CEB5 /* DummySource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DummySource.h; path = SongGong.xcodeproj/DummySource.h; sourceTree = SOURCE_ROOT; };
-		A7462BAF13D3841700C5CEB5 /* DummySource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DummySource.m; path = SongGong.xcodeproj/DummySource.m; sourceTree = SOURCE_ROOT; };
+		A7462BAE13D3841700C5CEB5 /* SGDummySource.h */ = {isa = PBXFileReference; fileEncoding = 4; name = SGDummySource.h; path = SongGong.xcodeproj/SGDummySource.h; sourceTree = SOURCE_ROOT; };
+		A7462BAF13D3841700C5CEB5 /* SGDummySource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SGDummySource.m; path = SongGong.xcodeproj/SGDummySource.m; sourceTree = SOURCE_ROOT; };
 		A763031A13D2754C00F7682D /* SGIPodSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SGIPodSource.h; sourceTree = SOURCE_ROOT; };
 		A763031B13D2754C00F7682D /* SGIPodSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SGIPodSource.m; sourceTree = SOURCE_ROOT; };
 		A7B38D2E13D2616A0067C53D /* nav-LeftRight.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; name = "nav-LeftRight.aiff"; path = "Resources/navSounds/nav-LeftRight.aiff"; sourceTree = SOURCE_ROOT; };
@@ -264,8 +264,8 @@
 				A73D786113D39E2B00837A2F /* NSObject+SPInvocationGrabbing.h */,
 				A73D786213D39E2B00837A2F /* NSObject+SPInvocationGrabbing.m */,
 				BC8F929913D3757300824DB6 /* Rdio Source */,
-				A7462BAE13D3841700C5CEB5 /* DummySource.h */,
-				A7462BAF13D3841700C5CEB5 /* DummySource.m */,
+				A7462BAE13D3841700C5CEB5 /* SGDummySource.h */,
+				A7462BAF13D3841700C5CEB5 /* SGDummySource.m */,
 				A763031D13D2754F00F7682D /* iPod Source */,
 				A7B38D3713D2623C0067C53D /* AudioPlayer */,
 				A7B38D2D13D261590067C53D /* Images */,
@@ -419,7 +419,7 @@
 				BCD1DECB13D2D67E000603F0 /* OHAttributedLabel.m in Sources */,
 				A7462BAC13D37B7D00C5CEB5 /* ExplodingTextViewController.m in Sources */,
 				BC8F929C13D375E500824DB6 /* SGRdioSource.m in Sources */,
-				A7462BB013D3841800C5CEB5 /* DummySource.m in Sources */,
+				A7462BB013D3841800C5CEB5 /* SGDummySource.m in Sources */,
 				BCC1BFC613D38876004C0EE2 /* SGRdioSourceViewController.m in Sources */,
 				A73D786313D39E2C00837A2F /* NSObject+SPInvocationGrabbing.m in Sources */,
 			);

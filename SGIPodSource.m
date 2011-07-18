@@ -29,7 +29,7 @@
 @end
 
 @implementation SGIPodSource
-@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor, delegate, player;
+@synthesize playlists, sourceName, currentPlaylist, currentItem, splashColor, delegate;
 
 - (id)init
 {
@@ -39,11 +39,11 @@
         self.sourceName = @"iPod";
         self.splashColor = [UIColor colorWithRed:26.0/255.0 green:102.0/255.0 blue:77.0/255.0 alpha:1.0];
         [[NSNotificationCenter defaultCenter] addObserver:self
-                               selector:@selector(playbackStateChanged:)
+                               selector:@selector(iPodLibraryDidChange:)
                                    name:MPMediaLibraryDidChangeNotification
                                  object:nil];
         
-        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iPodLibraryDidChange:) name: MPMusicPlayerControllerPlaybackStateDidChangeNotification object:nil];
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playbackStateChanged:) name: MPMusicPlayerControllerPlaybackStateDidChangeNotification object:nil];
 
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(iPodItemChanged:) name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification object:nil];
         [[MPMediaLibrary defaultMediaLibrary] beginGeneratingLibraryChangeNotifications];
@@ -59,7 +59,6 @@
             [playlist release];
         }
         self.playlists = [NSArray arrayWithArray:thePlaylists];
-        self.player =[MPMusicPlayerController applicationMusicPlayer];
     }
     
     return self;
@@ -242,9 +241,9 @@
     
 }
 
-- (void) playbackStateChanged:(id)notification 
+- (void)playbackStateChanged:(id)notification 
 {
-    
+    [(SGIPodItem *)currentItem playbackStateChanged:notification];
 }
 
 - (void)iPodItemChanged:(id)notification
@@ -327,7 +326,7 @@
 @end;
 
 @implementation SGIPodItem
-@synthesize title,album,artist,thumbnail, persistentId;
+@synthesize title,album,artist,thumbnail, persistentId, updateTimer, player;
 
 - (id)initWithiPodItem:(MPMediaItem *)item
 {
@@ -344,11 +343,14 @@
     self.album = [item valueForProperty:MPMediaItemPropertyAlbumTitle];
     self.persistentId = [item valueForProperty:MPMediaItemPropertyPersistentID];
     [[MPMusicPlayerController applicationMusicPlayer] addObserver:self forKeyPath:@"currentPlaybackTime" options:0 context:nil];
- return self;
+    
+//    updateTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(updateProgress:) userInfo:nil repeats:YES];
+    return self;
 }
 
 - (void)dealloc
 {
+    self.player = nil;
     [[MPMusicPlayerController applicationMusicPlayer] removeObserver:self forKeyPath:@"currentPlaybackTime"];
     [super dealloc];
 }
@@ -386,7 +388,27 @@
 
 - (float)progress
 {
-    return [[MPMusicPlayerController applicationMusicPlayer] currentPlaybackTime]/[[[self mpItem] valueForProperty:MPMediaItemPropertyPlaybackDuration]doubleValue];
+//    NSLog(@"%f - %f - %f", 
+//           [[MPMusicPlayerController applicationMusicPlayer] currentPlaybackTime],
+//          [[MPMusicPlayerController applicationMusicPlayer] currentPlaybackTime]
+//          /
+//          [[[self mpItem] valueForProperty:MPMediaItemPropertyPlaybackDuration] doubleValue],
+//          [[[self mpItem] valueForProperty:MPMediaItemPropertyPlaybackDuration] doubleValue]
+//          
+//          );
+    return [[MPMusicPlayerController applicationMusicPlayer] currentPlaybackTime]
+            /
+            [[[self mpItem] valueForProperty:MPMediaItemPropertyPlaybackDuration] doubleValue];
+}
+
+- (void) playbackStateChanged:(id)notification 
+{
+    if ([[MPMusicPlayerController applicationMusicPlayer] playbackState] == MPMusicPlaybackStatePlaying)
+    {
+        self.player = [notification object];
+    } else {
+        self.player = nil;
+    }
 }
 
 #pragma mark -
@@ -399,5 +421,17 @@
         [self didChangeValueForKey:@"progress"];
         
     }
+}
+
++ (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key
+{
+    NSSet *keyPaths = [super keyPathsForValuesAffectingValueForKey:key];
+    
+    if ([key isEqualToString:@"progress"])
+    {
+        NSSet *affectingKeys = [NSSet setWithObjects:@"player.currentPlaybackTime",nil];
+        keyPaths = [keyPaths setByAddingObjectsFromSet:affectingKeys];
+    }
+    return keyPaths;
 }
 @end

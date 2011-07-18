@@ -20,6 +20,7 @@
 @synthesize attributedLabel;
 @synthesize playItem;
 @synthesize source;
+@synthesize progressTimer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,7 +32,18 @@
 }
 - (void)setPlayItem:(NSObject<SGMediaItem> *)aPlayItem
 {
+    if (aPlayItem == playItem)
+        return;
+    if (aPlayItem != nil && progressTimer == nil)
+    {
+        self.progressTimer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(updateProgress:) userInfo:0 repeats:YES];
+    } else {
+        [progressTimer invalidate];
+        self.progressTimer  = nil;
 
+    }
+    
+    [self willChangeValueForKey:@"playItem"];
     if (playItem != aPlayItem)
     {
         [aPlayItem retain];
@@ -52,9 +64,21 @@
     [mas setFontFamily:@"Helvetica" size:17.0 bold:YES italic:NO range:NSMakeRange(title.length+2+artist.length, album.length)];
     attributedLabel.attributedText = mas;
     songProgress.progress = playItem.progress;
+    
+    [(NSObject *)playItem addObserver:self forKeyPath:@"progress" options:0 context:nil];
+    
     artworkView.image = playItem.thumbnail ? playItem.thumbnail : [UIImage imageNamed:@"BlankAudio"];
     [self.view setNeedsDisplay];
+    [self didChangeValueForKey:@"playItem"];
 }
+
+- (void)updateProgress:(id)obj
+{
+    songProgress.progress = (float)playItem.progress;
+    NSLog(@"%02f, %2f", songProgress.progress, (float)playItem.progress);
+    [songProgress setNeedsDisplay];
+}
+
 - (void)didReceiveMemoryWarning
 {
     // Releases the view if it doesn't have a superview.
@@ -96,6 +120,7 @@
 
 - (void)viewDidUnload
 {
+    [(NSObject *)playItem removeObserver:self forKeyPath:@"progress"];
     [self setArtworkView:nil];
     [self setAttributedLabel:nil];
     [self setSongProgress:nil];
@@ -114,6 +139,8 @@
 }
 
 - (void)dealloc {
+    [progressTimer invalidate];
+    [progressTimer release];
     [artworkView release];
     [attributedLabel release];
     [songProgress release];
@@ -121,5 +148,14 @@
     [listeningToLabel release];
     [colorSplashView release];
     [super dealloc];
+}
+
+#pragma mark -
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context    
+{
+    if ([keyPath isEqualToString:@"progress"])
+    {
+        NSLog(@"progress!!");
+    }
 }
 @end

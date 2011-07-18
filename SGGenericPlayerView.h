@@ -28,4 +28,5 @@
 @property (nonatomic, retain) IBOutlet OHAttributedLabel *attributedLabel;
 @property (readwrite, nonatomic, retain) id <SGMediaItem> playItem;
 @property (readwrite, retain) id <SGCarouselItem> source;
+@property (readwrite, retain) NSTimer *progressTimer;
 @end

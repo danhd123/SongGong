@@ -27,6 +27,8 @@ static SongGongAppDelegate *s_appDelegate;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    [[UIApplication sharedApplication] 
+       setStatusBarStyle:UIStatusBarStyleBlackTranslucent animated:NO];
     s_appDelegate = self;
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
