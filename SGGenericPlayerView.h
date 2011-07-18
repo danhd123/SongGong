@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@class OHAttributedLabel;
+@class OHAttributedLabel, DDProgressView;
 @protocol SGMediaItem, SGCarouselItem;
 
 @interface SGGenericPlayerView : UIViewController {
@@ -18,6 +18,7 @@
     UIView *topView;
     UILabel *listeningToLabel;
     UIView *colorSplashView;
+    DDProgressView *betterProgressView;
 }
 @property (nonatomic, retain) IBOutlet UIProgressView *songProgress;
 @property (nonatomic, retain) IBOutlet UIView *topView;

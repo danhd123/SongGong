@@ -10,6 +10,8 @@
 #import "OHAttributedLabel.h"
 #import "SGCarouselProtocols.h"
 #import "NSAttributedString+Attributes.h"
+#import "NSObject+SPInvocationGrabbing.h"
+#import "DDProgressView.h"
 
 @implementation SGGenericPlayerView
 @synthesize songProgress;
@@ -30,6 +32,7 @@
     }
     return self;
 }
+
 - (void)setPlayItem:(NSObject<SGMediaItem> *)aPlayItem
 {
     if (aPlayItem == playItem)
@@ -50,6 +53,13 @@
         [(NSObject<SGCarouselItem>*)playItem release];
         playItem = aPlayItem;
     }
+
+        
+    listeningToLabel.text = self.source.sourceName;
+    
+    
+    colorSplashView.backgroundColor = self.source.splashColor;
+
     NSString *title = playItem.title;
     NSString *artist = playItem.artist;
     NSString *album = playItem.album;
@@ -74,9 +84,10 @@
 
 - (void)updateProgress:(id)obj
 {
-    songProgress.progress = (float)playItem.progress;
-    NSLog(@"%02f, %2f", songProgress.progress, (float)playItem.progress);
-    [songProgress setNeedsDisplay];
+//    [[songProgress onMainAsync:YES] setProgress:(float)playItem.progress];
+//    NSLog(@"%02f, %2f", songProgress.progress, (float)playItem.progress);
+//    [songProgress setNeedsDisplay];
+    betterProgressView.progress = (float)playItem.progress;
 }
 
 - (void)didReceiveMemoryWarning
@@ -92,10 +103,23 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    CGRect progressFrame = self.songProgress.frame;
+    betterProgressView = [[DDProgressView alloc] initWithFrame:progressFrame];
+    
+    betterProgressView.innerColor = [UIColor colorWithRed:140.0/255.0 green:198.0/255.0 blue:63.0/255.0 alpha:1.0];
+    
+    betterProgressView.outerColor = [UIColor colorWithRed:140.0/255.0 green:198.0/255.0 blue:63.0/255.0 alpha:1.0];
+    betterProgressView.emptyColor = [UIColor blackColor];
+    
+    UIView *sv = self.songProgress.superview;
+    [songProgress removeFromSuperview];
+    [sv addSubview:betterProgressView];
+    [betterProgressView release];
+    
     // Do any additional setup after loading the view from its nib.
     [topView setBackgroundColor:[[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"gray_bar_gradient"]] autorelease]];
-    listeningToLabel.text = self.source.sourceName;
-    colorSplashView.backgroundColor = self.source.splashColor;
     
     
 //    NSString *title = playItem.title;

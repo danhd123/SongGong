@@ -87,9 +87,10 @@
 					<object class="IBUIProgressView" id="528278962">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{281, 282}, {184, 9}}</string>
+						<string key="NSFrame">{{281, 270}, {184, 9}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						<float key="IBUIProgress">0.5</float>
@@ -4668,8 +4669,8 @@ AAgAAAAIAAIACAACAAAAAgAAAAEAAQABAAE</bytes>
 							<bool key="EncodedWithXMLCoder">YES</bool>
 							<reference ref="560804480"/>
 							<reference ref="701486254"/>
-							<reference ref="528278962"/>
 							<reference ref="968981253"/>
+							<reference ref="528278962"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
