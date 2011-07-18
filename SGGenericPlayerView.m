@@ -56,8 +56,6 @@
 
         
     listeningToLabel.text = self.source.sourceName;
-    
-    
     colorSplashView.backgroundColor = self.source.splashColor;
 
     NSString *title = playItem.title;
@@ -116,7 +114,7 @@
     UIView *sv = self.songProgress.superview;
     [songProgress removeFromSuperview];
     [sv addSubview:betterProgressView];
-    [betterProgressView release];
+  //  [betterProgressView release];
     
     // Do any additional setup after loading the view from its nib.
     [topView setBackgroundColor:[[[UIColor alloc] initWithPatternImage:[UIImage imageNamed:@"gray_bar_gradient"]] autorelease]];

@@ -102,6 +102,7 @@
         MPMediaPropertyPredicate *mpp = [MPMediaPropertyPredicate predicateWithValue:pid forProperty:MPMediaPlaylistPropertyPersistentID comparisonType:MPMediaPredicateComparisonEqualTo];
         [query addFilterPredicate:mpp];
         [[MPMusicPlayerController applicationMusicPlayer] setQueueWithQuery:query];
+        [[[MPMusicPlayerController applicationMusicPlayer] onMainAsync:YES] play];
     }
     id tmp = [playlist retain];
     [currentPlaylist release];

@@ -26,7 +26,9 @@
     CGRect origPlaylistNameLabelFrame;
     UIView *topView;
     UIView *colorSplash;
+    UIView *bottomView;
 }
+@property (nonatomic, retain) IBOutlet UIView *bottomView;
 @property (nonatomic, retain) IBOutlet UIView *topView;
 @property (nonatomic, retain) IBOutlet UIView *colorSplash;
 

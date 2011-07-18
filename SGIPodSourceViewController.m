@@ -22,6 +22,7 @@
 
 
 @implementation SGIPodSourceViewController
+@synthesize bottomView;
 @synthesize topView;
 @synthesize colorSplash;
 @synthesize source = iPodSource;
@@ -57,7 +58,7 @@
     
     origPlaylistNameLabelFrame = playlistNameLabel.frame;
     
-    topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"gray_bar_gradient"]];
+    topView.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"carousel_graygradient"]];
     colorSplash.backgroundColor = self.source.splashColor;
     
     // Do any additional setup after loading the view from its nib.
@@ -78,6 +79,7 @@
     myPlaylistsLabel = nil;
     [self setTopView:nil];
     [self setColorSplash:nil];
+    [self setBottomView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
@@ -135,6 +137,7 @@
     colorSplash.hidden = NO;
     titleLabel.hidden = NO;
     artistLabel.hidden = NO;
+    bottomView.hidden = NO;
     artworkOrIcon.image = self.source.currentItem.thumbnail;
 }
 
@@ -145,6 +148,8 @@
     colorSplash.hidden = YES;
     titleLabel.hidden = YES;
     artistLabel.hidden = YES;
+    bottomView.hidden = YES;
+    
     [self.view setNeedsDisplay];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(pushGenericPlayer) object:nil];
 }
@@ -159,6 +164,11 @@
     if (!playerViewController)
     {
         playerViewController = [[SGGenericPlayerView alloc] initWithNibName:@"SGGenericPlayerView" bundle:nil];
+    }
+    
+    if (!playerViewController.view.isHidden && playerViewController.view.alpha > 0.0)
+    {
+        return;
     }
     
     playerViewController.source = self.source;
@@ -210,6 +220,7 @@
     [iPodSource release];
     [topView release];
     [colorSplash release];
+    [bottomView release];
     [super dealloc];
 }
 
@@ -220,6 +231,8 @@
     if (!newPlaylistName)
         newPlaylistName = @"Library";
     [ExplodingTextViewController explodeText:newPlaylistName];
+    playlistNameLabel.text = iPodSource.currentPlaylist.title;
+    
   //  [self animatePlaylistView:(direction == 0) newName:newPlaylistName];
 }
 

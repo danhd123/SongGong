@@ -57,6 +57,7 @@
     colorSplash.hidden = YES;
     titleLabel.hidden = YES;
     artistLabel.hidden = YES;
+    bottomView.hidden = YES;
     [self.view setNeedsDisplay];
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(pushGenericPlayer) object:nil];
 }
