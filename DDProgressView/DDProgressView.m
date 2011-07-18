@@ -88,7 +88,7 @@
 	CGFloat radius = 0.5f * rect.size.height ;
     
 	[outerColor setStroke] ;
-	CGContextSetLineWidth(context, 2.0f) ;
+	CGContextSetLineWidth(context, 0.5f) ;
 	
 	CGContextBeginPath(context) ;
 	CGContextMoveToPoint(context, CGRectGetMinX(rect), CGRectGetMidY(rect)) ;
